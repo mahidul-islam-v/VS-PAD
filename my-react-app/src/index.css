@@ -1,3 +1,7 @@
 body {
-    margin-right: 80vw;
+    margin: 25px 40px;
+}
+
+body * {
+    margin: 5px;
 }

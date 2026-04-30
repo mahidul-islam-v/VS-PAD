@@ -5,7 +5,7 @@ function App() {
 
     return (
         <>
-            <Hooker username="admin" />
+            <Hooker username="admin"/>
         </>
     );
 }
