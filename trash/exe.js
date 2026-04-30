@@ -40,5 +40,7 @@ const products = [
 ]
 
 const nameArr = products.map(pro=>pro.name)
+let n0mber = [1, 2]
 
-console.log(nameArr);
+n0mber-=['a']
+console.log(n0mber);
