@@ -1,11 +1,11 @@
-import Hooker from "./Hooker.jsx";
+import ColorPicker from "./ColorPicker.jsx";
 
 
 function App() {
 
     return (
         <>
-            <Hooker username="admin"/>
+            <ColorPicker/>
         </>
     );
 }
