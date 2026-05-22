@@ -5,3 +5,7 @@ body {
 body * {
     margin: 5px;
 }
+
+.ip {
+    margin: 0;
+}

@@ -1,13 +1,11 @@
-import ColorPicker from "./ColorPicker.jsx";
-
+import Car from "./Car.jsx";
 
 function App() {
-
     return (
         <>
-            <ColorPicker/>
+            <Car />
         </>
     );
 }
 
-export default App
+export default App;
