@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import icedCoffeeImg from "@/assets/images/Iced-Coffee.jpg";
+import icedCoffeeImg from "@/assets/images/icon.png";
 import React from "react";
 
 const app = () => {
@@ -10,7 +10,7 @@ const app = () => {
                 resizeMode="cover"
                 stle={styles.img}
             ></ImageBackground>
-            <Text style={styles.text}>Cofee Shop</Text>
+            <Text style={styles.text}>Coee Shop</Text>
         </View>
     );
 };
