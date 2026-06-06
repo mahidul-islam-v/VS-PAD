@@ -1,9 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import icedCoffeeImg from "@/assets/images/Iced Coffee.jpeg";
 import React from "react";
 
 const app = () => {
     return (
         <View style={styles.container}>
+            <ImageBackground src={icedC}></ImageBackground>
             <Text style={styles.text}>Cofee Shop</Text>
         </View>
     );
@@ -23,3 +25,5 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
 });
+
+const bg = ImgBg.create({});
