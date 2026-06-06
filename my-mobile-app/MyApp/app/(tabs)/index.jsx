@@ -8,9 +8,10 @@ const app = () => {
             <ImageBackground
                 source={icedCoffeeImg}
                 resizeMode="cover"
-                stle={styles.img}
-            ></ImageBackground>
-            <Text style={styles.text}>Coffee Shop</Text>
+                style={styles.img}
+            >
+                <Text style={styles.text}>Coffee Shop</Text>
+            </ImageBackground>
         </View>
     );
 };
