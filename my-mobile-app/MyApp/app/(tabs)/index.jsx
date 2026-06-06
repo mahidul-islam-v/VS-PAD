@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import icedCoffeeImg from "@/assets/images/Iced Coffee.jpeg";
+import icedCoffeeImg from "@/assets/images/Iced-Coffee.";
 import React from "react";
 
 const app = () => {
