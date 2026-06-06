@@ -1,16 +1,16 @@
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import icedCoffeeImg from "@/assets/images/icon.png";
+import icedCoffeeImg from "@/assets/images/Iced-Coffee.jpg";
 import React from "react";
 
 const app = () => {
     return (
         <View style={styles.container}>
             <ImageBackground
-                src={icedCoffeeImg}
+                source={icedCoffeeImg}
                 resizeMode="cover"
                 stle={styles.img}
             ></ImageBackground>
-            <Text style={styles.text}>Coee Shop</Text>
+            <Text style={styles.text}>Coffee Shop</Text>
         </View>
     );
 };
