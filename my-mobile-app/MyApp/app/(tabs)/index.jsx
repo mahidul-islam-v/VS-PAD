@@ -5,7 +5,11 @@ import React from "react";
 const app = () => {
     return (
         <View style={styles.container}>
-            <ImageBackground src={icedC}></ImageBackground>
+            <ImageBackground
+                src={icedCoffeeImg}
+                resizeMode="cover"
+                stle={styles.img}
+            ></ImageBackground>
             <Text style={styles.text}>Cofee Shop</Text>
         </View>
     );
@@ -24,6 +28,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
     },
+    img: {
+        width: "100%",
+        height: "100%",
+        flex: 1,
+        justifyContent: "center",
+        resizeMode: "cover",
+    },
 });
-
-const bg = ImgBg.create({});
