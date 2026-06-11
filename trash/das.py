@@ -7,3 +7,5 @@ my_vehicle = {
 
 for x,y in my_vehicle.items():
     print(x,y)
+
+my_vehicle
