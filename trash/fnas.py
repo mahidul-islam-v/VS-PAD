@@ -1,4 +1,8 @@
 def dic(fn, ln, a):
     return {
-        'firstname': '{fn}'
+        'firstname': fn,
+        'lastname': ln,
+        'age': a
     }
+
+print(dic("Alen", "smith", 33))
