@@ -6,3 +6,10 @@ def dic(fn, ln, a):
     }
 
 print(dic("Alen", "smith", 33))
+
+name:str = "wg"
+
+class a:
+    name: int = "waaa"
+
+print(a.name)
