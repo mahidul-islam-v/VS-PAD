@@ -14,5 +14,7 @@ vehicle2['number_of_tires'] = 3
 
 vehicle2.pop("mileage")
 
-for x,y in vehicle2.items():
-    print(x)
+# for x,y in vehicle2.items():
+#     print(x)
+
+print(vehicle2['model'])
