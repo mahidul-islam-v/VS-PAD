@@ -10,6 +10,6 @@ print(dic("Alen", "smith", 33))
 name:str = "wg"
 
 class a:
-    name: int = "waaa"
+    name = "waaa"
 
 print(a.name)
