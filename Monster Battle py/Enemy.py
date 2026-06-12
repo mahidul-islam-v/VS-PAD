@@ -6,6 +6,9 @@ class Enemy:
 
     def talk():
         print("**cricket**")
+
+    def atk(self):
+       print(f'{self.__name} deals {self.ad} damage.')
     
     def ultimate(self):
         print(f"{self.__name} has no ultimate.")
