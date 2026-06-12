@@ -5,7 +5,7 @@ class Rimuru(Enemy):
     def __init__(self, ad, hp):
         super().__init__(name="Rimuru", ad=ad, hp=hp)
 
-    def talk():
+    def talk(self):
         print('Fight me!!')
     
     def ultimate(self):
