@@ -20,7 +20,7 @@ def battle(e1, e2):
         print(f'{e2.get_name()}: {e2.hp}hp')
         print('\n')
         
-    winner = e1.get_name() if e1.hp>0 else e2.get_name()
+    winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
     print(f'{winner} wins\n**{winner.lower()} smirks')
 
 p1 = Rimuru(50, 5)
