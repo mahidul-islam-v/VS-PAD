@@ -25,6 +25,6 @@ def battle(e1, e2):
     print(f'### ⭐ {winner} wins ⭐ ###\n**{winner.lower()} smirks')
 
 p1 = Rimuru(5, 50)
-p2 = Veldora(4, 100)
+p2 = Veldora(3, 100)
 
 battle(p1, p2)
