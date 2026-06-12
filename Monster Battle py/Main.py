@@ -10,7 +10,8 @@ def battle(p1, p2):
     while p1.hp>0 and p2.hp>0:
         print(f'------Round {round}------')
         print(f'-------Fight------')
-        p1.ul
+        p1.ultimate()
+        p2.ultimate()
 
 p1 = Rimuru(50, 5)
 p2 = Veldora(100, 4)
