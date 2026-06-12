@@ -6,7 +6,7 @@ class Veldora(Enemy):
         super().__init__(name="Veldora", ad=ad, hp=hp)
 
     def talk():
-        print(f'Fight me!!')
+        print(f'Haha! Come brother, I shall entertain you.')
     
     def ultimate(self):
         did_ult = random.random() < 0.05
