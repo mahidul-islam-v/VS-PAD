@@ -25,3 +25,5 @@ def battle(p1, p2):
 
 p1 = Rimuru(50, 5)
 p2 = Veldora(100, 4)
+
+battle(p1, p2)
