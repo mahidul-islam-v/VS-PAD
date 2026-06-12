@@ -6,7 +6,7 @@ class Rimuru(Enemy):
         super().__init__(name="Rimuru", ad=ad, hp=hp)
 
     def talk():
-        print(f'Fight me!!')
+        print('Fight me!!')
     
     def ultimate(self):
         did_ult = random.random() < 0.35
