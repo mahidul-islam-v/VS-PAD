@@ -1,6 +1,5 @@
-from Enemy import *
-from Rimuru import *
-from Veldora import *
+from Rimuru import Rimuru
+from Veldora import Veldora
 
 def battle(e1, e2):
     e1.talk()
