@@ -12,4 +12,4 @@ class Veldora(Enemy):
         did_ult = random.random() < 0.02
         if did_ult:
             self.ad+= 9999999
-            print('Veldora goes Super Saiyan!!!!!')
+            print('* Veldora goes Super Saiyan!!!!!')
