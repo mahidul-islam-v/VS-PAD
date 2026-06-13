@@ -11,8 +11,8 @@ def battle(e1, e2):
     while e1.hp>0 and e2.hp>0:
         round+=1
         print(f'------Round {round}------')
-        time.sleep(0.5)
-        print(f'-------Fight-------')
+        time.sleep(1)
+        print(f'-------Fight!------')
         time.sleep(0.5)
         e1.ultimate()
         e2.ultimate()
@@ -27,7 +27,7 @@ def battle(e1, e2):
         print(f'{e1.get_name()}: \033[32m{e1.hp}\033[0m hp')
         time.sleep(0.5)
         print(f'{e2.get_name()}: \033[32m{e2.hp}\033[0m hp')
-        time.sleep(1)
+        time.sleep(2)
 
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
