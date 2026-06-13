@@ -31,14 +31,12 @@ p1h = 30
 p2d = 1
 p2h = 100
 
-if len(sys.argv) == 5:
-    p1d = int(sys.argv[1])
-    p1h = int(sys.argv[2])
-    p2d = int(sys.argv[3])
-    p2h = int(sys.argv[4])
-elif len(sys.argv) > 1:
-    print("\033[1;34mThis text is Bold Blue!\033[0m")
+arg = sys.argv
+arglen = len(arg)
 
-p1 = Rimuru(p1d, p1h)
-p2 = Veldora(p2d, p2h)
-battle(p1, p2)
+if arglen != 1 or arglen != 5 :
+    print("\033[1;34mInvalid number of arguiment!\033[0m\nRead the documentation on github for further instruction.")
+
+# p1 = Rimuru(p1d, p1h)
+# p2 = Veldora(p2d, p2h)
+# battle(p1, p2)
