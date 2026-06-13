@@ -23,7 +23,7 @@ def battle(e1, e2):
         print('\n')
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
-    print(f'### ⭐ {winner} wins ⭐ ###\n**{winner.lower()} smirks')
+    print(f'### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###\n**{winner.lower()} smirks')
 
 
 p1d = 1
