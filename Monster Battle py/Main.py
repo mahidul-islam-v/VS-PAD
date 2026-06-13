@@ -35,8 +35,15 @@ arg = sys.argv
 arglen = len(arg)
 
 if arglen != 1 or arglen != 5 :
-    print("\033[1;34mInvalid number of arguiment!\033[0m\nRead the documentation on github for further instruction.")
+    print("\033[1;34mInvalid number of arguments!\033[0m\nRead the documentation on github for further instructions.")
+else:
+    if len(sys.argv) == 5:
+        p1d = int(sys.argv[1])
+        p1h = int(sys.argv[2])
+        p2d = int(sys.argv[3])
+        p2h = int(sys.argv[4])
 
-# p1 = Rimuru(p1d, p1h)
-# p2 = Veldora(p2d, p2h)
-# battle(p1, p2)
+    p1 = Rimuru(p1d, p1h)
+    p2 = Veldora(p2d, p2h)
+    battle(p1, p2)
+
