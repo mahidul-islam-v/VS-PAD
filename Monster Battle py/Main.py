@@ -11,21 +11,27 @@ def battle(e1, e2):
     while e1.hp>0 and e2.hp>0:
         round+=1
         print(f'------Round {round}------')
+        time.sleep(0.5)
         print(f'-------Fight-------')
+        time.sleep(0.5)
         e1.ultimate()
         e2.ultimate()
+        
+        time.sleep(0.5)
         e1.atk()
+        time.sleep(0.5)
         e2.atk()
+        time.sleep(0.5)
         e1.hp = max(0, e1.hp - e2.ad)
         e2.hp = max(0, e2.hp - e1.ad)
         print(f'{e1.get_name()}: \033[32m{e1.hp}\033[0m hp')
-        print(f'{e2.get_name()}: \033[32m{e2.hp}\033[0m hp')
-        print('\n')
         time.sleep(0.5)
+        print(f'{e2.get_name()}: \033[32m{e2.hp}\033[0m hp')
+        time.sleep(1)
 
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
-    print(f'### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###\n**\033[30m{winner.lower()} smirks\033[0m')
+    print(f'\n### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###\n**\033[30m{winner.lower()} smirks\033[0m')
 
 
 p1d = 5
