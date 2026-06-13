@@ -24,7 +24,12 @@ def battle(e1, e2):
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
     print(f'### ⭐ {winner} wins ⭐ ###\n**{winner.lower()} smirks')
 
+
+p1h = int(input("Enter"))
+p1d = int(input())
+p2h = int(input())
+p2d = int(input())
+
 p1 = Rimuru(5, 50)
 p2 = Veldora(3, 100)
-
 battle(p1, p2)
