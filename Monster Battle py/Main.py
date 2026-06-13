@@ -36,6 +36,8 @@ if len(sys.argv) == 5:
     p1h = int(sys.argv[2])
     p2d = int(sys.argv[3])
     p2h = int(sys.argv[4])
+elif len(sys.argv) > 1:
+    print("Invalid number of arguments")
 
 p1 = Rimuru(p1d, p1h)
 p2 = Veldora(p2d, p2h)
