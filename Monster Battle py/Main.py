@@ -37,7 +37,7 @@ if len(sys.argv) == 5:
     p2d = int(sys.argv[3])
     p2h = int(sys.argv[4])
 elif len(sys.argv) > 1:
-    print("Invalid number of arguments")
+    print("\033[1;34mThis text is Bold Blue!\033[0m")
 
 p1 = Rimuru(p1d, p1h)
 p2 = Veldora(p2d, p2h)
