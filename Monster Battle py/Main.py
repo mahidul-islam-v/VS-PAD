@@ -25,11 +25,11 @@ def battle(e1, e2):
     print(f'### ⭐ {winner} wins ⭐ ###\n**{winner.lower()} smirks')
 
 
-p1h = int(input("Enter"))
-p1d = int(input())
-p2h = int(input())
-p2d = int(input())
+p1d = int(input("Enter Rimuru's Attack Damage: "))
+p1h = int(input("Enter Rimuru's Health Point: "))
+p2d = int(input("Enter Veldora's Attack Damage: "))
+p2h = int(input("Enter Veldora's Health Point: "))
 
-p1 = Rimuru(5, 50)
-p2 = Veldora(3, 100)
+p1 = Rimuru(p1d, p1h)
+p2 = Veldora(p2d, p2h)
 battle(p1, p2)
