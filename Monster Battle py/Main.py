@@ -1,4 +1,4 @@
-import sys
+import sys, time
 from Rimuru import Rimuru
 from Veldora import Veldora
 
@@ -21,15 +21,17 @@ def battle(e1, e2):
         print(f'{e1.get_name()}: \033[32m{e1.hp}\033[0m hp')
         print(f'{e2.get_name()}: \033[32m{e2.hp}\033[0m hp')
         print('\n')
+        time.sleep(0.5)
+
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
     print(f'### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###\n**\033[30m{winner.lower()} smirks\033[0m')
 
 
-p1d = 1
+p1d = 5
 p1h = 30
 p2d = 1
-p2h = 100
+p2h = 50
 
 arg = sys.argv
 al = len(arg)

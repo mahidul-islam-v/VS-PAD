@@ -9,7 +9,7 @@ class Veldora(Enemy):
         print('Haha! Come brother, I shall entertain you.')
     
     def ultimate(self):
-        did_ult = random.random() < 0.02
+        did_ult = random.random() < 0.05
         if did_ult:
             self.ad+= 9999999
             print('* Veldora goes \033[35mSuper Saiyan\033[0m!!!!!')
