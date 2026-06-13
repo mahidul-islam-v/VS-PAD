@@ -12,4 +12,4 @@ class Rimuru(Enemy):
         did_ult = random.random() < 0.35
         if did_ult:
             self.hp+= 3
-            print('* Rimuru regenerated 3 hp!')
+            print('* Rimuru regenerated \033[36m3\033[0m hp!')

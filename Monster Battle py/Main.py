@@ -18,8 +18,8 @@ def battle(e1, e2):
         e2.atk()
         e1.hp = max(0, e1.hp - e2.ad)
         e2.hp = max(0, e2.hp - e1.ad)
-        print(f'{e1.get_name()}: {e1.hp}hp')
-        print(f'{e2.get_name()}: {e2.hp}hp')
+        print(f'{e1.get_name()}: \033[32m{e1.hp}\033[0m hp')
+        print(f'{e2.get_name()}: \033[32m{e2.hp}\033[0m hp')
         print('\n')
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
