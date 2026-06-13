@@ -1,3 +1,4 @@
+import sys
 from Rimuru import Rimuru
 from Veldora import Veldora
 
@@ -25,8 +26,17 @@ def battle(e1, e2):
     print(f'### ⭐ {winner} wins ⭐ ###\n**{winner.lower()} smirks')
 
 
-uip = list(map(int, input().split()))
+p1d = 1
+p1h = 30
+p2d = 1
+p2h = 100
 
-p1 = Rimuru(uip[0], uip[1])
-p2 = Veldora(uip[2], uip[3])
+if len(sys.argv) == 5:
+    p1d = int(sys.argv[1])
+    p1h = int(sys.argv[2])
+    p2d = int(sys.argv[3])
+    p2h = int(sys.argv[4])
+
+p1 = Rimuru(p1d, p1h)
+p2 = Veldora(p2d, p2h)
 battle(p1, p2)
