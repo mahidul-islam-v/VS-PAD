@@ -31,7 +31,9 @@ def battle(e1, e2):
 
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
-    print(f'\n### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###\n**\033[30m{winner.lower()} smirks\033[0m')
+    print(f'\n### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###')
+    time.sleep(1*s)
+    print(f'**\033[30m{winner.lower()} smirks\033[0m')
 
 
 p1d = 5
