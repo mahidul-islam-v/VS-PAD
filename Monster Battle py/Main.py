@@ -27,12 +27,12 @@ def battle(e1, e2):
         print(f'{e1.get_name()}: \033[32m{e1.hp}\033[0m hp')
         time.sleep(0.5*s)
         print(f'{e2.get_name()}: \033[32m{e2.hp}\033[0m hp')
-        time.sleep(2*s)
+        time.sleep(1*s)
 
         
     winner = e1.get_name() if e1.hp>0 else e2.get_name() if e2.hp>0 else "both"
     print(f'\n### ⭐ \033[33m{winner} Wins\033[0m ⭐ ###')
-    time.sleep(1*s)
+    time.sleep(0.5*s)
     print(f'\033[30m** {winner.lower()} smirks\033[0m')
 
 
@@ -43,18 +43,20 @@ p2h = 50
 
 arg = sys.argv
 al = len(arg)
-s = int(input("Enter game speed\033[30m (recommended 10\033[0m): "))/10
 
 if al != 1 and al != 5 :
     print("\033[1;34mInvalid number of arguments!\033[0m\nRead the documentation on github for further instructions.")
-else:
-    if al == 5:
-        p1d = int(arg[1])
-        p1h = int(arg[2])
-        p2d = int(arg[3])
-        p2h = int(arg[4])
+    exit()
 
-    p1 = Rimuru(p1d, p1h)
-    p2 = Veldora(p2d, p2h)
-    battle(p1, p2)
+s = int(input("Enter game speed\033[30m (recommended 10\033[0m): "))/10
+
+if al == 5:
+    p1d = int(arg[1])
+    p1h = int(arg[2])
+    p2d = int(arg[3])
+    p2h = int(arg[4])
+
+p1 = Rimuru(p1d, p1h)
+p2 = Veldora(p2d, p2h)
+battle(p1, p2)
 
