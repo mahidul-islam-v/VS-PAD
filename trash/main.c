@@ -1,28 +1,33 @@
 #include <stdio.h>
-
 int main() {
+     float salary, bonus = 0, final_salary;
+     int experience, rating;
 
-     int units;
-     float bill = 0;
+     printf("Enter salary: ");
+     scanf("%f", &salary);
+     printf("Enter years of experience: ");
+     scanf("%d", &experience);
+     printf("Enter performance rating: ");
+     scanf("%d", &rating);
 
-     printf("Enter consumed units: ");
-
-     scanf("%d", &units);
-
-     if (units <= 100) {
-         bill = units * 5;}
-     else if (units <= 200) {
-         bill = (100 * 5) + ((units - 100) * 7);}
-     else if (units <= 300) {
-         bill = (100 * 5) + (100 * 7) + ((units - 200) * 10);}
+     if (experience >= 5) {
+         if (rating == 5) {
+             bonus = salary * 0.20;}
+         else if (rating == 4) {
+             bonus = salary * 0.15;}
+         else {
+             bonus = salary * 0.10;}}
      else {
-         bill = (100 * 5) + (100 * 7) + (100 * 10) + ((units - 300) * 15);}
+         if (rating == 5) {
+             bonus = salary * 0.10; }
+         else if (rating == 4) {
+             bonus = salary * 0.07;}
+         else {
+             bonus = salary * 0.05;}}
 
+     final_salary = salary + bonus;
+     printf("Bonus: %.0f\n", bonus);
+     printf("Final Salary: %.0f\n", final_salary);
 
-     if (bill > 2000) {
-         bill+= bill*0.5;} 
-
-     printf("Total bill: %.0f\n", bill);
-
-     return 0; 
+     return 0;
 }
