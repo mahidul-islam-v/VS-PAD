@@ -41,7 +41,7 @@ p2h = 50
 
 arg = sys.argv
 al = len(arg)
-s = int(input("Enter game speed\033[30m (recommended 10\033[0m): "))
+s = int(input("Enter game speed\033[30m (recommended 10\033[0m): "))/10
 
 if al != 1 and al != 5 :
     print("\033[1;34mInvalid number of arguments!\033[0m\nRead the documentation on github for further instructions.")
