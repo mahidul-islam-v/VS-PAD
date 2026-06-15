@@ -12,7 +12,7 @@ async def first_api():
    return books
 
 @app.get("/books/{book_title}")
-async def first_api(book_title):
+async def dynamic_api(book_title):
    for book in books:
-      if book["title"].casefold() == book_title:
+      if book["title"].casefold() == book_title.casefold():
          return book
