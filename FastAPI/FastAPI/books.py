@@ -2,6 +2,13 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
-async def first_api():
-   return {'message': 'Hello Mahi'}
+books = [
+    {"title": "Title One", "text": "Hello"},
+    {"title": "Title Two", "text": "World"}
+]
+
+@app.get("/books/{book_title}")
+async def first_api(book_title):
+   for book in books:
+      if book["title"].casefold() == book_title:
+         return book
