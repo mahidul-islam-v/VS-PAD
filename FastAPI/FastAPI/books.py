@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI
+app = FastAPI()
 
 @app.get("/hello")
 async def first_api():
