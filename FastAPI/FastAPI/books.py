@@ -3,8 +3,12 @@ from fastapi import FastAPI
 app = FastAPI()
 
 books = [
-    {"title": "Title One", "text": "Hello"},
-    {"title": "Title Two", "text": "World"}
+    {"title": "Title One", "author": "Author One", 'category': "science"},
+    {"title": "Title Two", "author": "Author Two", 'category': "science"},
+    {"title": "Title Three", "author": "Author Three", 'category': "history"},
+    {"title": "Title Four", "author": "Author Four", 'category': "math"},
+    {"title": "Title Five", "author": "Author Five", 'category': "math"},
+    {"title": "Title six", "author": "Author Six", 'category': "math"}
 ]
 
 @app.get("/books")
@@ -16,3 +20,12 @@ async def dynamic_api(book_title):
    for book in books:
       if book["title"].casefold() == book_title.casefold():
          return book
+      
+@app.get("/books/")
+async def return_books_by_category (category):
+   books_to_return = []
+   for book in books:
+      if book.get("category").casefold() == category.casefold():
+         books_to_return.append(book)
+   
+   return books_to_return
