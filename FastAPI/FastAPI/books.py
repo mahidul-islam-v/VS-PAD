@@ -39,3 +39,5 @@ async def update_book(new_book=Body()):
    for book in books:
       if book.get("title", "").casefold() == new_book.get("title", "").casefold():
          book = new_book
+
+   return books
