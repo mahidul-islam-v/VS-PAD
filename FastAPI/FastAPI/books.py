@@ -2,7 +2,7 @@ from fastapi import FastAPI, Body
 
 app = FastAPI()
 
-books = [
+books: list = [
     {"title": "Title One", "author": "Author One", 'category': "science"},
     {"title": "Title Two", "author": "Author Two", 'category': "science"},
     {"title": "Title Three", "author": "Author Three", 'category': "history"},
