@@ -29,3 +29,7 @@ async def return_books_by_category (category):
          books_to_return.append(book)
    
    return books_to_return
+
+@app.post("/books/create")
+async def create_book(new_book=Body()):
+   books.append(new_book)
