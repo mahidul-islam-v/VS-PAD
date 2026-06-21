@@ -33,3 +33,9 @@ async def return_books_by_category(category: str):
 @app.post("/books/create")
 async def create_book(new_book=Body()):
    books.append(new_book)
+
+@app.put("/books/update_book")
+async def update_book(new_book=Body()):
+   for book in books:
+      if book.get("title", "").casefold() == new_book.get("title", "").casefold():
+         book = new_book
