@@ -9,9 +9,14 @@ class Book:
       self.author = author
       self.description = description
       self.rating = rating
-      
 
-Books: list = [22,22]
+Books: list = [
+   Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5),
+   Book(2, "Computer Science Basic", "faculty cse", "Basic knowledge of CSE", 3),
+   Book(3, "Quantum Computing", "faculty cse", "Quantum computer knowledge", 5),
+   Book(4, "Differential Calculus", "faculty mathematics", "Numbers and numbers", 4),
+   Book(5, "Structured Programming Language", "faculty cse", "C and C++", 4.5),
+]
 
 @app.get("/books")
 async def first_api():
