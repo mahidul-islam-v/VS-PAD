@@ -4,7 +4,7 @@ class Enemy:
         self.ad = ad
         self.hp = hp
 
-    def talk():
+    def talk(self):
         print("**cricket**")
 
     def atk(self):
