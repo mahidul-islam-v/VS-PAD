@@ -36,7 +36,5 @@ async def post_books(book_request: BookRequest):
    Books.append(find_book_id(new_book))
 
 def find_book_id(current_book: Book):
-
    current_book.id = 1 + (Books[-1].id if len(Books)>0 else 0)
-
    return current_book
