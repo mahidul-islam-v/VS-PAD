@@ -12,7 +12,6 @@ class Book:
       self.rating = rating
 
 class BookRequest(BaseModel):
-   id: int
    title: str = Field(min_length=3, max_length=40)
    author: str = Field(min_length=3, max_length=40)
    description: str = Field(min_length=3, max_length=200)
@@ -32,6 +31,7 @@ async def first_api():
 
 @app.post("/create-book")
 async def post_books(book_request: BookRequest):
-   book_request.id = 1 + (Books[-1].id if len(Books)>0 else 0)
-   new_book = Book(**book_request.model_dump())
+   book_data = book_request.model_dump()
+   book_data["id"] = 1 + (Books[-1].id if len(Books)>0 else 0)
+   new_book = Book(**book_data)
    Books.append(new_book)
