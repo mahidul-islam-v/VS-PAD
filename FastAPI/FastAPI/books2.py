@@ -15,7 +15,7 @@ class BookRequest(BaseModel):
    title: str = Field(min_length=3, max_length=40)
    author: str = Field(min_length=3, max_length=40)
    description: str = Field(min_length=3, max_length=200)
-   rating: float = Field(gt=-1, lt=6)
+   rating: float = Field(ge=0, le=5)
 
 Books: list = [
    Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5),
