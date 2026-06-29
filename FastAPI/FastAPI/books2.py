@@ -4,7 +4,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 class Book:
-   def __init__(self, id, title, author, description, rating) -> None:
+   def __init__(self, id: int, title: str, author: str, description: str, rating: float) -> None:
       self.id = id
       self.title = title
       self.author = author
