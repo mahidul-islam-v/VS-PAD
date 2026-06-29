@@ -11,6 +11,13 @@ class Book:
       self.description = description
       self.rating = rating
 
+class BookRequest(BaseModel):
+   id: int
+   title: str
+   author: str
+   description: str
+   rating: float
+
 Books: list = [
    Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5),
    Book(2, "Computer Science Basic", "faculty cse", "Basic knowledge of CSE", 3),
@@ -24,6 +31,6 @@ async def first_api():
    return Books
 
 @app.post("/create-book")
-async def post_books(book_request=Body()):
+async def post_books(book_request: BookRequest):
    Books.append(book_request)
 
