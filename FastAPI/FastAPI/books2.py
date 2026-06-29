@@ -33,5 +33,6 @@ async def first_api():
 @app.post("/create-book")
 async def post_books(book_request: BookRequest):
    new_book = Book(**book_request.model_dump())
+   print(type(new_book))
    Books.append(new_book)
 
