@@ -12,11 +12,11 @@ class Book:
       self.rating = rating
 
 class BookRequest(BaseModel):
-   id: int
-   title: str = Field(min_length=3 )
-   author: str
-   description: str
-   rating: float
+   id: int = Field()
+   title: str = Field(min_length=3, max_length=40)
+   author: str = Field(min_length=3, max_length=40)
+   description: str = Field(min_length=3, max_length=200)
+   rating: float = Field(gt=-1, lt=6)
 
 Books: list = [
    Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5),
