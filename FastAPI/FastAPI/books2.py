@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Body
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 app = FastAPI()
 
@@ -13,7 +13,7 @@ class Book:
 
 class BookRequest(BaseModel):
    id: int
-   title: str
+   title: str = Field(min_length=3 )
    author: str
    description: str
    rating: float
