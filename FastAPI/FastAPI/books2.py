@@ -35,3 +35,4 @@ async def post_books(book_request: BookRequest):
    book_data["id"] = 1 + (Books[-1].id if len(Books)>0 else 0)
    new_book = Book(**book_data)
    Books.append(new_book)
+   return new_book
