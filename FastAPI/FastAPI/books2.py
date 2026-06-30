@@ -17,6 +17,16 @@ class BookRequest(BaseModel):
    description: str = Field(min_length=3, max_length=200)
    rating: float = Field(ge=0, le=5)
 
+   model_config = {
+      "json_schema_extra": {
+         "example":{
+            "title": "Title One",
+            "author": "Author One",
+            "description": "Subject"},
+            "rating": 5
+      }
+   }
+
 Books: list = [
    Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5),
    Book(2, "Computer Science Basic", "faculty cse", "Basic knowledge of CSE", 3),
