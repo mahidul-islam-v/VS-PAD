@@ -80,5 +80,4 @@ async def delete_book(book_id: int):
    for i in range(len(Books)):
       if Books[i].id == book_id:
          Books.pop(Books[i])
-         return "Book Deleted"
-   return "Book not found"
+         break
