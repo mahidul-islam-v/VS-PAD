@@ -1,16 +1,18 @@
 from typing import Optional
 from fastapi import FastAPI, Body
 from pydantic import BaseModel, Field
+from datetime import date
 
 app = FastAPI()
 
 class Book:
-   def __init__(self, id: int, title: str, author: str, description: str, rating: float) -> None:
+   def __init__(self, id: int, title: str, author: str, description: str, rating: float, published_date: int) -> None:
       self.id = id
       self.title = title
       self.author = author
       self.description = description
       self.rating = rating
+      self.puplished_date = published_date
 
 class BookRequest(BaseModel):
    id: Optional[int] = Field(description="ID is not needed", default=None)
@@ -18,6 +20,7 @@ class BookRequest(BaseModel):
    author: str = Field(min_length=3, max_length=40)
    description: str = Field(min_length=3, max_length=200)
    rating: float = Field(ge=0, le=5)
+   published_date: int = Field(le=date.today().year)
 
    model_config = {
       "json_schema_extra": {
@@ -26,17 +29,18 @@ class BookRequest(BaseModel):
             "title": "Title One",
             "author": "Author One",
             "description": "Subject",
-            "rating": 5
+            "rating": 5,
+            "published": 2012,
          }
       }
    }
 
 Books: list = [
-   Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5),
-   Book(2, "Computer Science Basic", "faculty cse", "Basic knowledge of CSE", 3),
-   Book(3, "Quantum Computing", "faculty cse", "Quantum computer knowledge", 5),
-   Book(4, "Differential Calculus", "faculty mathematics", "Numbers and numbers", 4),
-   Book(5, "Structured Programming Language", "faculty cse", "C and C++", 4.5),
+   Book(1, "Computer Science Pro", "faculty cse", "All knowledge of CSE", 5, 2001),
+   Book(2, "Computer Science Basic", "faculty cse", "Basic knowledge of CSE", 3, 2017),
+   Book(3, "Quantum Computing", "faculty cse", "Quantum computer knowledge", 5, 2010),
+   Book(4, "Differential Calculus", "faculty mathematics", "Numbers and numbers", 4, 1998),
+   Book(5, "Structured Programming Language", "faculty cse", "C and C++", 4.5, 2019),
 ]
 
 @app.get("/books")
@@ -79,5 +83,5 @@ async def update_book(new_book: BookRequest):
 async def delete_book(book_id: int):
    for i in range(len(Books)):
       if Books[i].id == book_id:
-         Books.pop(Books[i])
+         Books.pop(i)
          break
