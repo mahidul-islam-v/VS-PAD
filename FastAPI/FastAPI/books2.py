@@ -62,7 +62,7 @@ async def get_book_by_rating(book_rating: int = Query(ge=0, le=5)):
    return books_to_return
 
 @app.get("/books/publish/")
-async def get_book_by_publish_date(publish_date: int = Query(ge=0, le=date.today().year)):
+async def get_book_by_publish_date(publish_date: int = Query(ge=1900, le=date.today().year)):
    books_to_return = []
    for book in Books:
       if book.published_date == publish_date:
