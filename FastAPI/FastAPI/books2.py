@@ -73,3 +73,12 @@ async def update_book(new_book: BookRequest):
          Books[i] = new_book
          return "Books Updated"
    return "Can not find ID"
+
+# DELETE
+@app.delete("/books/{book_id}")
+async def delete_book(book_id: int):
+   for i in range(len(Books)):
+      if Books[i].id == book_id:
+         Books.pop(Books[i])
+         return "Book Deleted"
+   return "Book not found"
