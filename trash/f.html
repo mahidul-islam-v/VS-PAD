@@ -67,10 +67,11 @@
             justify-content: center;
         }
         .card {
+            position: relative;
             min-width: 200px;
-            border:1px solid rgba(128, 128, 128, 0.5);
+            border:1px solid rgba(128, 128, 128, 0.25);
             border-radius: 10px;
-            padding: 0px 15px;
+            padding: 0px 15px 2rem;
         }
         .card sup, .card sub{
             color: grey;
@@ -84,9 +85,27 @@
         .card p span {
             margin-right: 10px; 
         }
+        .card h6 {
+            position: absolute;
+            bottom: -0.5rem;
+            font-size: 0.6rem;
+            font-weight: 100;
+            color: rgba(255, 250, 250, 0.6);
+        }
+        .card h6 a{
+            color: rgba(255, 250, 250, 0.8);
+        }
+        .card .tp {
+            background: rgb(25, 25, 25);
+            color: darkgrey;
+        }
+        .card .bl {
+            background: dodgerblue;
+            color: snow;
+        }
         button {
             border-radius: 50px;
-            border: 1px solid rgba(128, 128, 128, 0.461);
+            border: 1px solid rgba(128, 128, 128, 0.25);
             background-color: snow;
             width: 100%;
             height: 1.75rem;
@@ -119,7 +138,7 @@
             <div class="card">
                 <h2>Free</h2>
                 <h1><sup>$ </sup>0<sub> USD / month</sub></h1>
-                <button class="free">Your current plan</button>
+                <button class="free tp">Your current plan</button>
                 <p><span class="material-symbols-outlined" >nearby</span>Core model</p>
                 <p><span class="material-symbols-outlined" > chat_bubble</span>Limited Messages and uploads</p>
                 <p><span class="material-symbols-outlined" >neurology</span>Core model</p>
@@ -142,7 +161,7 @@
             <div class="card">
                 <h2>Plus</h2>
                 <h1><sup>$ </sup>20<sub> USD / month</sub></h1>
-                <button class="free">Your current plan</button>
+                <button class="free bl">Your current plan</button>
                 <p><span class="material-symbols-outlined">nearby</span>Core model</p>
                 <p><span class="material-symbols-outlined"> chat_bubble</span>Limited Messages and uploads</p>
                 <p><span class="material-symbols-outlined">neurology</span>Core model</p>
