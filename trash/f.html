@@ -9,7 +9,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
        .logo img {
         width: 40px;
@@ -19,11 +18,14 @@
         text-decoration: none;
         color: grey;
         padding-right: 15px;
-        position: absolute;
-        transition: 0.0625s ease 0.125s;
+        position: relative;
+        transition: all 0.0625s ease 0.125s;
+        top: 0;
+        right: 0;
        }
        a:hover{
-        transform: translate(1px, -2px);
+        top: -2px;
+        right: -1px;
         transition: 0.125s ease 0s;
        }
     </style>
