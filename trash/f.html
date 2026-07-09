@@ -7,6 +7,10 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,GRAD,opsz@300,-50,48" rel="stylesheet" />
     <style>
+        body {
+            background-color: rgb(25, 25, 25);
+            color: white;
+        }
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -19,7 +23,7 @@
         }
         .right a {
             text-decoration: none;
-            color: grey;
+            color: rgb(219, 219, 219);
             padding-right: 15px;
             position: relative;
             transition: all 0.0625s ease 0.0625s;
@@ -27,17 +31,28 @@
             right: 0;
         }
         .right a:hover {
+            color: rgb(255, 255, 255);
             top: -2px;
             right: -1px;
             transition: 0.125s ease 0s;
         }
         .cards {
             display: flex;
+            gap: 10px;
+            align-items: stretch;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .card {
+            min-width: 200px;
             border:1px solid grey;
             border-radius: 5px;
-            padding: 0px 10px;
+            padding: 0px 15px;
+        }
+        button {
+            border-radius: 50px;
+            border: 1px solid rgba(128, 128, 128, 0.461);
+            background-color: snow;
         }
     </style>
 </head>
