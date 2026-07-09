@@ -1,197 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,GRAD,opsz@300,-50,48"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                background-color: rgb(25, 25, 25);
+                color: white;
+                padding: 0;
+                margin: 0;
+            }
+            .nav {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background-color: rgb(25, 25, 25);
+                border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .left {
+                display: inline-block;
+                height: 49.75px;
+                width: 0px;
+            }
+            .logo img {
+                width: 50px;
+                height: 50px;
+                opacity: 95%;
+                z-index: 10;
+            }
+            .right a {
+                text-decoration: none;
+                color: rgb(219, 219, 219);
+                padding-right: 15px;
+                position: relative;
+                transition: all 0.0625s ease 0.0625s;
+                top: 0;
+                right: 0;
+            }
+            .right a:hover {
+                color: rgb(255, 255, 255);
+                top: -2px;
+                right: -1px;
+                transition: 0.125s ease 0s;
+            }
+            .pricing {
+                padding: 20px 0;
+                border-top: 1px solid grey;
+                border-radius: -50px;
+            }
+            h4 {
+                text-align: center;
+            }
+            .cards {
+                display: flex;
+                gap: 10px;
+                align-items: stretch;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .card {
+                position: relative;
+                min-width: 200px;
+                border: 1px solid rgba(128, 128, 128, 0.25);
+                border-radius: 10px;
+                padding: 0px 15px 2rem;
+            }
+            .card sup, .card .sub {
+                display: inline;
+                color: grey;
+                font-size: 0.75rem;
+            }
+            .card h1 {
+                font-size: 2.5rem;
+            }
+            .card p {
+                font-size: 0.6rem;
+                display: flex;
+                align-items: center;
+            }
+            .card p span {
+                font-size: 1rem;
+                margin-right: 10px;
+            }
+            .card h6 {
+                position: absolute;
+                bottom: -0.5rem;
+                font-size: 0.6rem;
+                font-weight: 100;
+                color: rgba(255, 250, 250, 0.6);
+            }
+            .card h6 a {
+                color: rgba(255, 250, 250, 0.8);
+            }
+            .card .tp {
+                background: rgb(25, 25, 25);
+                color: darkgrey;
+            }
+            .card .bl {
+                background: dodgerblue;
+                color: snow;
+            }
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50px;
+                border: 1px solid rgba(128, 128, 128, 0.25);
+                background-color: snow;
+                width: 100%;
+                height: 1.75rem;
+                font-size: 0.65rem;
+                font-weight: 800;
+                margin-bottom: 2rem;
+                cursor: pointer;
+                transition: 0.2s ease;
+                backface-visibility: hidden;
+            }
+            button::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+                z-index: 1;
+            }
+            button * {
+                position: relative;
+                z-index: 2;
+            }
+            button:hover {
+                border: 1px solid rgba(128, 128, 128, 0.5);
+                font-size: 0.625rem;
+            }
+            button:hover::before {
+                opacity: 0.2;
+            }
+        </style>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,GRAD,opsz@300,-50,48" rel="stylesheet" />
-    <style>
-        body {
-            background-color: rgb(25, 25, 25);
-            color: white;
-            padding: 0;
-            margin: 0;
-        }
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: rgb(25, 25, 25);
-            border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .left {
-            display: inline-block;
-            height: 49.75px;
-            width: 0px;
-        }
-        .logo img {
-            width: 50px;
-            height: 50px;
-            opacity: 95%;
-            z-index: 10;
-        }
-        .right a {
-            text-decoration: none;
-            color: rgb(219, 219, 219);
-            padding-right: 15px;
-            position: relative;
-            transition: all 0.0625s ease 0.0625s;
-            top: 0;
-            right: 0;
-        }
-        .right a:hover {
-            color: rgb(255, 255, 255);
-            top: -2px;
-            right: -1px;
-            transition: 0.125s ease 0s;
-        }
-        .pricing {
-            padding: 20px 0;
-            border-top: 1px solid grey;
-            border-radius: -50px;
-        }
-        h4{
-            text-align: center;
-        }
-        .cards {
-            display: flex;
-            gap: 10px;
-            align-items: stretch;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .card {
-            position: relative;
-            min-width: 200px;
-            border:1px solid rgba(128, 128, 128, 0.25);
-            border-radius: 10px;
-            padding: 0px 15px 2rem;
-        }
-        .card sup, .card .sub{
-            display: inline;
-            color: grey;
-            font-size: 0.75rem;
-        }
-        .card h1{
-            font-size: 2.5rem;
-        }
-        .card p {
-            font-size: 0.6rem;
-            display: flex;
-            align-items: center;
-        }
-        .card p span {
-            font-size: 1rem;
-            margin-right: 10px;
-        }
-        .card h6 {
-            position: absolute;
-            bottom: -0.5rem;
-            font-size: 0.6rem;
-            font-weight: 100;
-            color: rgba(255, 250, 250, 0.6);
-        }
-        .card h6 a{
-            color: rgba(255, 250, 250, 0.8);
-        }
-        .card .tp {
-            background: rgb(25, 25, 25);
-            color: darkgrey;
-        }
-        .card .bl {
-            background: dodgerblue;
-            color: snow;
-        }
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50px;
-            border: 1px solid rgba(128, 128, 128, 0.25);
-            background-color: snow;
-            width: 100%;
-            height: 1.75rem;
-            font-size: 0.65rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            cursor: pointer;
-            transition: 0.2s ease;
-            backface-visibility: hidden;
-        }
-        button:hover{
-            border: 1px solid rgba(128, 128, 128, 0.5);
-            font-size: 0.625rem;
-            
-        }
-    </style>
-</head>
+    <body>
+        <section class="nav">
+            <nav class="navbar">
+                <div class="left">
+                    <a href="#" class="logo"
+                        ><img src="/trash/trash 2/6537937.jpg" alt=""
+                    /></a>
+                </div>
 
-<body>
-    <section class="nav">
-        <nav class="navbar">
-            <div class="left">
-                <a href="#" class="logo"><img src="/trash/trash 2/6537937.jpg" alt=""></a>
+                <div class="right">
+                    <a href="#">Home</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Contact</a>
+                </div>
+            </nav>
+        </section>
+
+        <section class="pricing">
+            <h4>Upgrade your plan</h4>
+
+            <div class="cards">
+                <div class="card">
+                    <h2>Free</h2>
+                    <h1>
+                        <sup>$ </sup>0
+                        <p class="sub">USD / month</p>
+                    </h1>
+                    <button class="free tp">Your current plan</button>
+                    <p>
+                        <span class="material-symbols-outlined">nearby</span
+                        >Core model
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">
+                            chat_bubble</span
+                        >Limited Messages and uploads
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">neurology</span
+                        >Core model
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined"
+                            >developer_board</span
+                        >Limited memory
+                    </p>
+                    <h6>
+                        Have an existing plan? <a href="#">See billnig help</a>
+                    </h6>
+                </div>
+
+                <div class="card">
+                    <h2>Go</h2>
+                    <h1>
+                        <sup>$ </sup>8
+                        <p class="sub">USD / month</p>
+                    </h1>
+                    <button class="free">Your current plan</button>
+                    <p>
+                        <span class="material-symbols-outlined">nearby</span
+                        >Core model
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">
+                            chat_bubble</span
+                        >Limited Messages and uploads
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">neurology</span
+                        >Core model
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined"
+                            >developer_board</span
+                        >Limited memory
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">graphic_eq</span
+                        >Expanded voice mode
+                    </p>
+                    <h6>
+                        This plan may include ads. <a href="#">Learn more</a>
+                    </h6>
+                </div>
+
+                <div class="card">
+                    <h2>Plus</h2>
+                    <h1>
+                        <sup>$ </sup>20
+                        <p class="sub">USD / month</p>
+                    </h1>
+                    <button class="free bl">Your current plan</button>
+                    <p>
+                        <span class="material-symbols-outlined">nearby</span
+                        >Core model
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">
+                            chat_bubble</span
+                        >Limited Messages and uploads
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined">neurology</span
+                        >Core model
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined"
+                            >developer_board</span
+                        >Limited memory
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined"
+                            >developer_board</span
+                        >Limited memory
+                    </p>
+                    <p>
+                        <span class="material-symbols-outlined"
+                            >developer_board</span
+                        >Limited memory
+                    </p>
+                </div>
             </div>
-        
-            <div class="right">
-                <a href="#">Home</a>
-                <a href="#">Pricing</a>
-                <a href="#">Contact</a>
-            </div>
-        </nav>
-    </section>
+        </section>
 
-    <section class="pricing">
-
-        <h4>Upgrade your plan</h4>
-
-        <div class="cards">
-            <div class="card">
-                <h2>Free</h2>
-                <h1><sup>$ </sup>0<p class="sub"> USD / month</p></h1>
-                <button class="free tp">Your current plan</button>
-                <p><span class="material-symbols-outlined" >nearby</span>Core model</p>
-                <p><span class="material-symbols-outlined" > chat_bubble</span>Limited Messages and uploads</p>
-                <p><span class="material-symbols-outlined" >neurology</span>Core model</p>
-                <p><span class="material-symbols-outlined" >developer_board</span>Limited memory</p>
-                <h6>Have an existing plan? <a href="#">See billnig help</a></h6>
-            </div>
-
-            <div class="card">
-                <h2>Go</h2>
-                <h1><sup>$ </sup>8<p class="sub"> USD / month</p></h1>
-                <button class="free">Your current plan</button>
-                <p><span class="material-symbols-outlined">nearby</span>Core model</p>
-                <p><span class="material-symbols-outlined"> chat_bubble</span>Limited Messages and uploads</p>
-                <p><span class="material-symbols-outlined">neurology</span>Core model</p>
-                <p><span class="material-symbols-outlined">developer_board</span>Limited memory</p>
-                <p><span class="material-symbols-outlined">graphic_eq</span>Expanded voice mode</p>
-                <h6>This plan may include ads. <a href="#">Learn more</a></h6>
-            </div>
-
-            <div class="card">
-                <h2>Plus</h2>
-                <h1><sup>$ </sup>20<p class="sub"> USD / month</p></h1>
-                <button class="free bl">Your current plan</button>
-                <p><span class="material-symbols-outlined">nearby</span>Core model</p>
-                <p><span class="material-symbols-outlined"> chat_bubble</span>Limited Messages and uploads</p>
-                <p><span class="material-symbols-outlined">neurology</span>Core model</p>
-                <p><span class="material-symbols-outlined">developer_board</span>Limited memory</p>
-                <p><span class="material-symbols-outlined">developer_board</span>Limited memory</p>
-                <p><span class="material-symbols-outlined">developer_board</span>Limited memory</p>
-            </div>
-        </div>
-    </section>
-
-    <div style="position: absolute; width: 100vw; height: 80px; top: 0; z-index: 1000; background-color: rgb(25, 25, 25);">
-    
-    </div>
-</body>
-
+        <div
+            style="
+                position: absolute;
+                width: 100vw;
+                height: 80px;
+                top: 0;
+                z-index: 1000;
+                background-color: rgb(25, 25, 25);
+            "
+        ></div>
+    </body>
 </html>
