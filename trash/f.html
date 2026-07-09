@@ -5,10 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .logo img {
+        width: 40px;
+        height: 40px;
+       }
+       a {
+        text-decoration: none;
+        color: grey;
+        padding-right: 15px;
+       }
+       a:hover{
+        transform: translate(3px, 40%)
+       }
     </style>
 </head>
 <body>
-    <nav></nav>
+    <nav class="navbar">
+        <div class="left">
+            <a href="#" class="logo"><img src="#" alt=""></a>
+        </div>
+
+        <div class="right">
+            <a href="#">Home</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    <hr>
 </body>
 </html>
