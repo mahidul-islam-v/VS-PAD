@@ -73,12 +73,16 @@
             border-radius: 10px;
             padding: 0px 15px 2rem;
         }
-        .card sup, .card sub{
+        .card sup, .card .sub{
+            display: inline;
             color: grey;
             font-size: 0.75rem;
         }
+        .card h1{
+            font-size: 2.5rem;
+        }
         .card p {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             display: flex;
             align-items: center;
         }
@@ -104,13 +108,16 @@
             color: snow;
         }
         button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 50px;
             border: 1px solid rgba(128, 128, 128, 0.25);
             background-color: snow;
             width: 100%;
             height: 1.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.65rem;
+            font-weight: 800;
         }
     </style>
 </head>
@@ -137,7 +144,7 @@
         <div class="cards">
             <div class="card">
                 <h2>Free</h2>
-                <h1><sup>$ </sup>0<sub> USD / month</sub></h1>
+                <h1><sup>$ </sup>0<p class="sub"> USD / month</p></h1>
                 <button class="free tp">Your current plan</button>
                 <p><span class="material-symbols-outlined" >nearby</span>Core model</p>
                 <p><span class="material-symbols-outlined" > chat_bubble</span>Limited Messages and uploads</p>
@@ -148,7 +155,7 @@
 
             <div class="card">
                 <h2>Go</h2>
-                <h1><sup>$ </sup>8<sub> USD / month</sub></h1>
+                <h1><sup>$ </sup>8<p class="sub"> USD / month</p></h1>
                 <button class="free">Your current plan</button>
                 <p><span class="material-symbols-outlined">nearby</span>Core model</p>
                 <p><span class="material-symbols-outlined"> chat_bubble</span>Limited Messages and uploads</p>
@@ -160,7 +167,7 @@
 
             <div class="card">
                 <h2>Plus</h2>
-                <h1><sup>$ </sup>20<sub> USD / month</sub></h1>
+                <h1><sup>$ </sup>20<p class="sub"> USD / month</p></h1>
                 <button class="free bl">Your current plan</button>
                 <p><span class="material-symbols-outlined">nearby</span>Core model</p>
                 <p><span class="material-symbols-outlined"> chat_bubble</span>Limited Messages and uploads</p>
