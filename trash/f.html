@@ -121,11 +121,14 @@
             font-weight: 800;
             margin-bottom: 2rem;
             cursor: pointer;
-            transition: 0.125s ease;
+            transition: 0.0625s ease;
+            will-change: transform;
+            transform: scale(1) translateZ(0);
+            backface-visibility: hidden;
         }
         button:hover{
-            opacity: 90%;
-            transform: scale(0.98);
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            transform: scale(0.99);
         }
     </style>
 </head>
