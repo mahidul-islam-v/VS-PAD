@@ -106,3 +106,7 @@ button {
     z-index: 2;
     flex-direction: column;
 }
+
+#hero span {
+    flex-direction: row;
+}
