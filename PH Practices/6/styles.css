@@ -12,12 +12,11 @@
 
 .section {
     padding: 0 60px;
-    flex-direction: column;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -40,6 +39,10 @@ button {
 }
 
 /* Navbar */
+
+#navbar {
+    justify-content: space-between;
+}
 
 .navbar {
     max-width: 1320px;
@@ -75,6 +78,12 @@ button {
     display: inline-block;
 }
 
+/* Hero */
+
+#hero {
+    position: relative;
+}
+
 #hero img {
     width: 100%;
 }
@@ -88,6 +97,7 @@ button {
 }
 
 .main {
+    justify-content: space-between;
     margin: 136px auto 50px;
     position: absolute;
     top: 0;
