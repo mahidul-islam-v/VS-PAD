@@ -12,11 +12,11 @@
 
 .section {
     padding: 0 60px;
+    flex-direction: column;
 }
 
 .container {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -70,7 +70,7 @@ button {
     text-decoration: none;
 }
 
-#hero{
+.main-bg{
     position: relative;
     display: inline-block;
 }
@@ -79,7 +79,7 @@ button {
     width: 100%;
 }
 
-#hero::before{
+.main-bg::before{
     content: "";
     position: absolute;
     inset: 0;
