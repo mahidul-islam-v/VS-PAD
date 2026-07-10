@@ -133,9 +133,6 @@
                 overflow: hidden;
                 left: 0;
             }
-            button span {
-                z-index: 300;
-            }
             button::before {
                 content: "";
                 position: absolute;
@@ -151,6 +148,7 @@
             }
             button * {
                 position: relative;
+                z-index: 2;
             }
             button:hover {
                 border: 1px solid rgba(128, 128, 128, 0.5);
@@ -233,7 +231,7 @@
                         <sup>$ </sup>8
                         <p class="sub">USD / month</p>
                     </h1>
-                    <button class="free"><span>Your current plan</span></button>
+                    <button class="free">Your current plan</button>
                     <p>
                         <span class="material-symbols-outlined">nearby</span
                         >Core model
