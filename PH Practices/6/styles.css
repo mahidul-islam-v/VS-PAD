@@ -51,9 +51,9 @@ ul {
 }
 
 /* Navbar */
+
 #navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
 }
 
 .navbar {
@@ -61,15 +61,6 @@ ul {
     margin: auto;
     padding: 24px 60px;
     height: 50px;
-    width: 100%;
-}
-
-.navbar div{
-    display: inline-block;
-}
-
-navbar div:nth-child(3) {
-    text-align: right;
 }
 
 .navbar img {
