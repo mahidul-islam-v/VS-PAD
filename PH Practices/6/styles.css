@@ -37,6 +37,10 @@ button {
     font-weight: 700;
 }
 
+ul {
+    list-style-position: inside;
+}
+
 /* Navbar */
 
 #navbar {
@@ -258,5 +262,5 @@ button {
 }
 
 .price button {
-    
+
 }
