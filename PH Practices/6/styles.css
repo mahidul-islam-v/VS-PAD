@@ -337,6 +337,10 @@ ul {
     background: white;
 }
 
+.p1 button:hover, .p3 button:hover {
+    background: rgb(246, 246, 246);
+}
+
 /* AI */
 
 
