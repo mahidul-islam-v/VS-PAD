@@ -331,6 +331,7 @@ ul {
 
 /* Footer */
 
-#footer {
+#footer>div {
     justify-content: space-between;
+    padding: 0 60px;
 }
