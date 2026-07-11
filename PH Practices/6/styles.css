@@ -42,6 +42,12 @@ ul {
     padding-left: 4px;
 }
 
+.hr {
+    width: 100%;
+    background-color: grey;
+    height: 1px;
+}
+
 /* Navbar */
 
 #navbar {
