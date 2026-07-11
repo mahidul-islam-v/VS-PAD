@@ -367,7 +367,10 @@ img {
     gap: 24px;
 }
 
-
+.socials a img {
+    height: 32px;
+    width: 32px;
+}
 
 .last a {
     color: rgba(255, 255, 255, 0.4);
