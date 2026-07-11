@@ -366,4 +366,6 @@ ul {
 .last a {
     color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
+} .last a:hover{
+    text-decoration: underline;
 }
