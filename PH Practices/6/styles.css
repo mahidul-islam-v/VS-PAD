@@ -295,6 +295,7 @@ ul {
 .price h2 {
     color: #0D1B2A;
     font-size: 44px;
+    letter-spacing: 0;
 } .p2 h2 {
     color: white;
 }
