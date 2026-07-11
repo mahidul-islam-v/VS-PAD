@@ -61,6 +61,19 @@ ul {
     margin: auto;
     padding: 24px 60px;
     height: 50px;
+    width: 100%;
+}
+
+.navbar div{
+    display: inline-block;
+}
+
+.navbar div:nth-child(1) {
+    align-self: start;
+}.navbar div:nth-child(2) {
+    align-self: center;
+}.navbar div:nth-child(3) {
+    align-self: end;
 }
 
 .navbar img {
