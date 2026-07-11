@@ -155,42 +155,30 @@
         <!-- todo AI -->
 
         <section id="stats" class="section">
-            <div class="stats-bg">
-                <div class="dot-grid"></div>
-                <div class="glow-orb"></div>
+            <div class="stat-item">
+                <h2 class="stat-number" id="attendee-count" data-count="4247" data-suffix="+">0</h2>
+                <p>Attendees</p>
             </div>
-            <div class="container stats-inner">
-                <div class="stats-header">
-                    <h5 class="a-font stats-eyebrow">BY THE NUMBERS</h5>
-                    <h1>DevConf in Numbers</h1>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h2 class="stat-number" data-count="4032" data-suffix="+">0</h2>
-                        <p>Attendees</p>
-                    </div>
-                    <div class="stat-item">
-                        <h2 class="stat-number" data-count="52" data-suffix="+">0</h2>
-                        <p>Countries</p>
-                    </div>
-                    <div class="stat-item">
-                        <h2 class="stat-number" data-count="120" data-suffix="+">0</h2>
-                        <p>Companies</p>
-                    </div>
-                    <div class="stat-item">
-                        <h2 class="stat-number" data-count="30" data-suffix="+">0</h2>
-                        <p>Workshops</p>
-                    </div>
-                    <div class="stat-item">
-                        <h2 class="stat-number" data-count="8" data-suffix="">0</h2>
-                        <p>Beta Releases</p>
-                    </div>
-                </div>
+            <div class="stat-item">
+                <h2 class="stat-number" data-count="63" data-suffix="+">0</h2>
+                <p>Countries</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number" data-count="187" data-suffix="+">0</h2>
+                <p>Companies</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number" data-count="34" data-suffix="+">0</h2>
+                <p>Workshops</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number" data-count="12" data-suffix="">0</h2>
+                <p>Beta Releases</p>
             </div>
         </section>
 
         <script>
-            function animateCount(el) {
+            function animateCount(el, onComplete) {
                     const target = parseInt(el.dataset.count, 10);
                     const suffix = el.dataset.suffix || "";
                     const duration = 1600;
@@ -201,9 +189,34 @@
                         const eased = 1 - Math.pow(1 - progress, 3);
                         const value = Math.floor(eased * target);
                         el.textContent = value.toLocaleString() + suffix;
-                        if (progress < 1) requestAnimationFrame(tick);
+                        if (progress < 1) {
+                            requestAnimationFrame(tick);
+                        } else {
+                            el.textContent = target.toLocaleString() + suffix;
+                            if (onComplete) onComplete(target);
+                        }
                     }
                     requestAnimationFrame(tick);
+                }
+
+                // Weighted random step: +1 common, +2 less common, +3 rare
+                function randomIncrement() {
+                    const roll = Math.random();
+                    if (roll < 0.65) return 1;   // 65% chance
+                    if (roll < 0.92) return 2;   // 27% chance
+                    return 3;                    // 8% chance
+                }
+
+                // Recursively reschedules itself with a fresh random delay (1s–60s)
+                function scheduleLiveTick(el, currentValue) {
+                    const suffix = el.dataset.suffix || "";
+                    const delay = (Math.random() * 59 + 1) * 1000;
+
+                    setTimeout(() => {
+                        currentValue += randomIncrement();
+                        el.textContent = currentValue.toLocaleString() + suffix;
+                        scheduleLiveTick(el, currentValue);
+                    }, delay);
                 }
 
                 const statsSection = document.querySelector("#stats");
@@ -211,7 +224,13 @@
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach((entry) => {
                             if (entry.isIntersecting) {
-                                document.querySelectorAll(".stat-number").forEach(animateCount);
+                                document.querySelectorAll(".stat-number").forEach((el) => {
+                                    animateCount(el, (target) => {
+                                        if (el.id === "attendee-count") {
+                                            scheduleLiveTick(el, target);
+                                        }
+                                    });
+                                });
                                 observer.disconnect();
                             }
                         });
