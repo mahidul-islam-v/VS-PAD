@@ -51,11 +51,6 @@ ul {
 }
 
 /* Navbar */
-
-#navbar {
-    justify-content: space-between;
-}
-
 .navbar {
     max-width: 1320px;
     margin: auto;
