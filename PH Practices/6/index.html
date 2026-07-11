@@ -223,7 +223,7 @@
                 }
 
                 function scheduleNextLiveTick(el, currentValue, suffix) {
-                    const delay = (Math.random() * 59 + 1) * 1000; // random 1s–60s
+                    const delay = (Math.random() * 10 + 1) * 1000; // random 1s–60s
                     setTimeout(() => {
                         currentValue += getRandomIncrement();
                         el.textContent = currentValue.toLocaleString() + suffix;

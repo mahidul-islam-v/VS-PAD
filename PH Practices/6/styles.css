@@ -443,6 +443,13 @@ img {
     font-weight: 500;
 }
 
+.stat-pulse {
+    animation: pulse-flash 0.4s ease;
+}
+@keyframes pulse-flash {
+    0% { color: #93C5FD; }
+    100% { color: white; }
+}
 
 /* Footer */
 
