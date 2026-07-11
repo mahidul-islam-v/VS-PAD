@@ -51,6 +51,11 @@ ul {
 }
 
 /* Navbar */
+#navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .navbar {
     max-width: 1320px;
     margin: auto;
@@ -63,12 +68,8 @@ ul {
     display: inline-block;
 }
 
-.navbar div:nth-child(1) {
-    align-self: start;
-}.navbar div:nth-child(2) {
-    align-self: center;
-}.navbar div:nth-child(3) {
-    align-self: end;
+navbar div:nth-child(3) {
+    text-align: right;
 }
 
 .navbar img {
