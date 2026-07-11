@@ -40,6 +40,8 @@ button {
 ul {
     list-style-position: inside;
     padding-left: 4px;
+} li {
+    margin-bottom: 10px;
 }
 
 .hr {
@@ -258,12 +260,17 @@ ul {
 
 .price {
     width: 100%;
-    border: 1px solid;
+    border: 1px solid #E5E7EB;
     border-radius: 12px;
     padding: 32px;
     display: flex;
     gap: 20px;
     flex-direction: column;
+} .p2 {
+    border-color: #0D1B2A;
+    background-color: #0D1B2A;
+} .p3 {
+    background-color: #F8F9FB;
 }
 
 .price button {
@@ -272,8 +279,28 @@ ul {
     font-weight: 600;
     border-radius: 8px;
 }
+
 /* h5 h2 h5 li */
 .price h5{
     color: #888888;
     font-size: 13px;
+} .p2 h5{
+    color: rgba(255, 255, 255, 0.5);
+} .p2 h5:nth-child(1) {
+    color: #93C5FD;
 }
+
+.price h2 {
+    color: #0D1B2A;
+    font-size: 44px;
+} .p2 h2 {
+    color: white;
+}
+
+.price li {
+    color: #333333;
+    font-size: 14px;
+} .p2 li {
+    color: rgba(255, 255, 255, 0.8);
+}
+
