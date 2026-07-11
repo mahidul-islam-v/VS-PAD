@@ -374,8 +374,9 @@ img {
 
 .socials a img {
     height: 32px;
+    position: relative;
     width: 32px;
-    z-index: 3;
+    z-index: 2;
 }
 
 
