@@ -358,9 +358,12 @@ img {
     color: rgba(255, 255, 255, 0.4);
 }
 
+
 #footer>div {
     justify-content: space-between;
     padding: 0 60px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .last {
@@ -377,7 +380,7 @@ img {
     position: relative;
     width: 32px;
     z-index: 2;
-    transition: filter 0.2s ease;
+    transition: filter 0.1s ease;
     filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
 }
 
