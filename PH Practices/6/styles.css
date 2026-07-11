@@ -284,6 +284,7 @@ ul {
 .price h5{
     color: #888888;
     font-size: 13px;
+    font-weight: 600;
 }.price h5:nth-child(1){
     letter-spacing: 0.32px;
 } .p2 h5{
