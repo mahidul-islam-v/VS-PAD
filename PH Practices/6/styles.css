@@ -251,7 +251,7 @@ ul {
 }
 
 .prices {
-    margin: 0 60px 80px;
+    margin: 0 60px 130px;
     padding: 48px 0 0 0;
     max-width: 1160px;
     width: 100%;
@@ -332,7 +332,10 @@ ul {
 /* Footer */
 
 #footer {
-    padding: 56px 60px 32px;
+    margin-top: 128px;
+    padding: 56px 60px 68px;
+    background-color: #0D1B2A;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 #footer>div {
@@ -342,5 +345,9 @@ ul {
 
 .last {
     gap: 24px;
+}
+
+.last a {
+    color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
 }
