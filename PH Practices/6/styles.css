@@ -54,6 +54,7 @@ ul {
 
 #navbar {
     justify-content: space-between;
+    position: relative;
 }
 
 .navbar {
@@ -69,6 +70,12 @@ ul {
 
 .navbar>.container {
     gap: 24px;
+}
+
+.navbar .links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar .btn-holder {
