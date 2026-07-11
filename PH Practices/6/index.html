@@ -152,8 +152,8 @@
             </div>
         </section>
 
-        <!-- ? AI -->
-         
+        <!-- todo AI -->
+
         <section id="stats" class="section">
             <div class="stats-bg">
                 <div class="dot-grid"></div>
@@ -188,6 +188,40 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            function animateCount(el) {
+                    const target = parseInt(el.dataset.count, 10);
+                    const suffix = el.dataset.suffix || "";
+                    const duration = 1600;
+                    const start = performance.now();
+
+                    function tick(now) {
+                        const progress = Math.min((now - start) / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const value = Math.floor(eased * target);
+                        el.textContent = value.toLocaleString() + suffix;
+                        if (progress < 1) requestAnimationFrame(tick);
+                    }
+                    requestAnimationFrame(tick);
+                }
+
+                const statsSection = document.querySelector("#stats");
+                if (statsSection) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                document.querySelectorAll(".stat-number").forEach(animateCount);
+                                observer.disconnect();
+                            }
+                        });
+                    }, { threshold: 0.4 });
+
+                    observer.observe(statsSection);
+                }
+        </script>
+
+        <!-- todo AI -->
     </main>
 
     <footer>
