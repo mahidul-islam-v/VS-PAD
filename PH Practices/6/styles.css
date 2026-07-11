@@ -353,7 +353,7 @@ img {
 
 #footer {
     margin-top: 128px;
-    padding: 56px 60px 68px;
+    padding: 68px 60px 56px;
     background-color: #0D1B2A;
     color: rgba(255, 255, 255, 0.4);
 }
@@ -362,7 +362,7 @@ img {
 #footer>div {
     justify-content: space-between;
     max-width: 1440px;
-    margin: 0 auto 20;
+    margin: 0 auto 12px;
 }
 
 .last {
