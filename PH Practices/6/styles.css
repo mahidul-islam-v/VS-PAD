@@ -45,7 +45,7 @@ ul {
 }
 
 .hr {
-    width: 100%;
+    max-width: 100%;
     background-color: grey;
     height: 1px;
 }
