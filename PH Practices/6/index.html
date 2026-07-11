@@ -188,6 +188,22 @@
                 </div>
             </div>
         </section>
+        <section id="newsletter" class="section">
+            <div class="container newsletter-inner">
+                <div class="newsletter-copy">
+                    <h5 class="a-font newsletter-eyebrow">STAY IN THE LOOP</h5>
+                    <h2>Get event updates in your inbox</h2>
+                    <p>Speaker announcements, schedule drops, and early-bird alerts. No spam, unsubscribe anytime.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <div class="newsletter-input-wrap">
+                        <input type="email" id="newsletterEmail" placeholder="you@company.com" required>
+                        <button type="submit">Notify Me</button>
+                    </div>
+                    <p class="newsletter-message" id="newsletterMessage"></p>
+                </form>
+            </div>
+        </section>
 
         <script>
             // Curated stat values — overrides whatever is in the HTML data-count attributes
@@ -257,6 +273,35 @@
 
                     observer.observe(statsSection);
                 }
+                const newsletterForm = document.getElementById("newsletterForm");
+                    if (newsletterForm) {
+                        const emailInput = document.getElementById("newsletterEmail");
+                        const inputWrap = document.querySelector(".newsletter-input-wrap");
+                        const message = document.getElementById("newsletterMessage");
+
+                        newsletterForm.addEventListener("submit", (e) => {
+                            e.preventDefault();
+                            const email = emailInput.value.trim();
+                            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+                            if (!isValid) {
+                                inputWrap.classList.add("input-error");
+                                message.textContent = "Please enter a valid email address.";
+                                message.className = "newsletter-message error";
+                                return;
+                            }
+
+                            inputWrap.classList.remove("input-error");
+                            message.textContent = "You're on the list! Check your inbox.";
+                            message.className = "newsletter-message success";
+                            emailInput.value = "";
+                        });
+
+                        emailInput.addEventListener("input", () => {
+                            inputWrap.classList.remove("input-error");
+                            message.textContent = "";
+                        });
+                    }
         </script>
 
         <!-- todo AI -->
