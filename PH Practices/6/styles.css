@@ -328,13 +328,13 @@ ul {
 .p1 button {
     border: 1px solid #2563EB;
     color: #2563EB;
-    background: none;
+    background: white;
 }
 
 .p3 button {
     border: 1px solid #0D1B2A;
     color: #0D1B2A;
-    background: none;
+    background: white;
 }
 
 /* AI */
