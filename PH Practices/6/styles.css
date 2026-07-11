@@ -39,6 +39,7 @@ button {
 
 ul {
     list-style-position: inside;
+    padding-left: 4px;
 }
 
 /* Navbar */
