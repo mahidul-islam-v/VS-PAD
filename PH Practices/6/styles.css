@@ -331,7 +331,16 @@ ul {
 
 /* Footer */
 
+#footer {
+    padding: 56px 60px 32px;
+}
+
 #footer>div {
     justify-content: space-between;
     padding: 0 60px;
+}
+
+.last {
+    gap: 24px;
+    text-decoration: none;
 }
