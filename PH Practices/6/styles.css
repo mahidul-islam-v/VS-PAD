@@ -29,7 +29,6 @@
 button {
     padding: 12px;
     background: #1D4ED8;
-    background: radial-gradient(circle,rgb(21, 83, 255) 0%, rgba(21, 83, 255) 0%, rgba(29, 78, 216) 0%, rgba(29, 78, 216) 100%);
     color: white;
     width: 100%;
     height: 100%;
@@ -37,10 +36,10 @@ button {
     border: none;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease 0.0625s;
 } button:hover {
-    background: #1D4ED8;
-    background: radial-gradient(circle,rgba(21, 83, 255) 0%, rgba(29, 78, 216) 100%, rgba(29, 78, 216) 100%, rgba(29, 78, 216) 100%);
+    transition: all 0.2s ease 0s;
+    background: #214cc2;
 }
 
 ul {
