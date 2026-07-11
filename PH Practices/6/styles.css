@@ -304,3 +304,14 @@ ul {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.prices li::marker {
+    color: #2563EB;
+}
+
+/* button */
+.p1 button {
+    border: 1px solid #2563EB;
+    color: #2563EB;
+    background: none;
+}
+
