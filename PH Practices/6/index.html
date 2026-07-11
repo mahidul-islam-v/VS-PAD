@@ -190,9 +190,16 @@
         </section>
 
         <script>
-            function animateCount(el) {
-                    const target = parseInt(el.dataset.count, 10);
-                    const suffix = el.dataset.suffix || "";
+            // Curated stat values — overrides whatever is in the HTML data-count attributes
+                const STAT_VALUES = {
+                    0: { count: 4127, suffix: "+", live: true },   // Attendees
+                    1: { count: 58, suffix: "+", live: false },  // Countries
+                    2: { count: 143, suffix: "+", live: false },  // Companies
+                    3: { count: 37, suffix: "+", live: false },  // Workshops
+                    4: { count: 9, suffix: "", live: false }   // Beta Releases
+                };
+
+                function animateCount(el, target, suffix) {
                     const duration = 1600;
                     const start = performance.now();
 
@@ -202,8 +209,28 @@
                         const value = Math.floor(eased * target);
                         el.textContent = value.toLocaleString() + suffix;
                         if (progress < 1) requestAnimationFrame(tick);
+                        else el.textContent = target.toLocaleString() + suffix;
                     }
                     requestAnimationFrame(tick);
+                }
+
+                // Weighted random increment: +1 common, +2 less common, +3 rare
+                function getRandomIncrement() {
+                    const roll = Math.random();
+                    if (roll < 0.70) return 1;      // 70% chance
+                    if (roll < 0.95) return 2;      // 25% chance
+                    return 3;                        // 5% chance
+                }
+
+                function scheduleNextLiveTick(el, currentValue, suffix) {
+                    const delay = (Math.random() * 59 + 1) * 1000; // random 1s–60s
+                    setTimeout(() => {
+                        currentValue += getRandomIncrement();
+                        el.textContent = currentValue.toLocaleString() + suffix;
+                        el.classList.add("stat-pulse");
+                        setTimeout(() => el.classList.remove("stat-pulse"), 400);
+                        scheduleNextLiveTick(el, currentValue, suffix);
+                    }, delay);
                 }
 
                 const statsSection = document.querySelector("#stats");
@@ -211,7 +238,18 @@
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach((entry) => {
                             if (entry.isIntersecting) {
-                                document.querySelectorAll(".stat-number").forEach(animateCount);
+                                document.querySelectorAll(".stat-number").forEach((el, index) => {
+                                    const config = STAT_VALUES[index];
+                                    if (!config) return;
+
+                                    animateCount(el, config.count, config.suffix);
+
+                                    if (config.live) {
+                                        setTimeout(() => {
+                                            scheduleNextLiveTick(el, config.count, config.suffix);
+                                        }, 1600); // wait for entrance animation to finish first
+                                    }
+                                });
                                 observer.disconnect();
                             }
                         });
