@@ -81,7 +81,7 @@ async def post_books(book_request: BookRequest):
    return new_book
 
 # PUT
-@app.put("/books/update_book")
+@app.put("/books/update_book", status_code=status.HTTP_204_NO_CONTENT)
 async def update_book(new_book: BookRequest):
    for i in range(len(Books)):
       if Books[i].id == new_book.id:
@@ -90,7 +90,7 @@ async def update_book(new_book: BookRequest):
    raise HTTPException(status_code=404, detail='else')
 
 # DELETE
-@app.delete("/books/{book_id}")
+@app.delete("/books/{book_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_book(book_id: int = Path(ge=1)):
    for i in range(len(Books)):
       if Books[i].id == book_id:
