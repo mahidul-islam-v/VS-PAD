@@ -86,7 +86,7 @@ async def update_book(new_book: BookRequest):
       if Books[i].id == new_book.id:
          Books[i] = new_book
          return "Books Updated"
-   return "Can not find ID"
+   raise HTTPException(status_code=404, detail='else')
 
 # DELETE
 @app.delete("/books/{book_id}")
