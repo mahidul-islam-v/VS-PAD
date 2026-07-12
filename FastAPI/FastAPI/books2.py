@@ -2,6 +2,7 @@ from typing import Optional
 from fastapi import FastAPI, Path, Query, HTTPException
 from pydantic import BaseModel, Field
 from datetime import date
+from starlette import status
 
 app = FastAPI()
 
@@ -43,11 +44,11 @@ Books: list = [
    Book(5, "Structured Programming Language", "faculty cse", "C and C++", 4.5, 2019),
 ]
 
-@app.get("/books")
+@app.get("/books", status_code=status.HTTP_200_OK)
 async def first_api():
    return Books
 
-@app.get("/books/{book_id}")
+@app.get("/books/{book_id}", status_code=status.HTTP_200_OK)
 async def get_book_by_id(book_id: int = Path(ge=0)):
    for book in Books:
       if book.id == book_id:
@@ -55,7 +56,7 @@ async def get_book_by_id(book_id: int = Path(ge=0)):
    
    raise HTTPException(status_code=404, detail="Item not found")
    
-@app.get("/books/")
+@app.get("/books/", status_code=status.HTTP_200_OK)
 async def get_book_by_rating(book_rating: int = Query(ge=0, le=5)):
    books_to_return = []
    for book in Books:
@@ -63,7 +64,7 @@ async def get_book_by_rating(book_rating: int = Query(ge=0, le=5)):
          books_to_return.append(book)
    return books_to_return
 
-@app.get("/books/publish/")
+@app.get("/books/publish/", status_code=status.HTTP_200_OK)
 async def get_book_by_publish_date(publish_date: int = Query(ge=1900, le=date.today().year)):
    books_to_return = []
    for book in Books:
@@ -72,7 +73,7 @@ async def get_book_by_publish_date(publish_date: int = Query(ge=1900, le=date.to
    return books_to_return
 
 # Post
-@app.post("/books/create-book")
+@app.post("/books/create-book", status_code=status.HTTP_201_CREATED)
 async def post_books(book_request: BookRequest):
    new_book = Book(**book_request.model_dump())
    new_book.id = 1 + (Books[-1].id if len(Books)>0 else 0)
