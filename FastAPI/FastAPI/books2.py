@@ -1,5 +1,5 @@
 from typing import Optional
-from fastapi import FastAPI, Path, Query
+from fastapi import FastAPI, Path, Query, HTTPException
 from pydantic import BaseModel, Field
 from datetime import date
 
@@ -52,6 +52,8 @@ async def get_book_by_id(book_id: int = Path(ge=0)):
    for book in Books:
       if book.id == book_id:
          return book
+   
+   raise HTTPException(status_code=404, detail="Item not found")
    
 @app.get("/books/")
 async def get_book_by_rating(book_rating: int = Query(ge=0, le=5)):
