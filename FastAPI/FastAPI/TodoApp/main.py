@@ -2,7 +2,7 @@ from typing import Annotated
 from sqlalchemy.orm import Session
 import models
 from models import Todos
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Path, Query
 from starlette import status
 from database import engine, SessionLocal
 
@@ -24,7 +24,7 @@ async def read_all(db: db_dependency):
    return db.query(Todos).all()
 
 @app.get("/todo/{todo_id}", status_code=status.HTTP_200_OK)
-async def get_todo_by_id(db: db_dependency, todo_id: int):
+async def get_todo_by_id(db: db_dependency, todo_id: int = Path(ge=0)):
    todo_res = db.query(Todos).filter(Todos.id == todo_id).first()
 
    if todo_res is not None:
