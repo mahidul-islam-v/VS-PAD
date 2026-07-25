@@ -1,1 +1,2 @@
-let num = process.argv[2]
+let num = 5
+
