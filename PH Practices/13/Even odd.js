@@ -1,1 +1,1 @@
-let num = ProcessingInstruction.arg
+let num = process.argv[2]
