@@ -72,7 +72,7 @@ function averageResponseTime(times) {
     }
    
  let total = 0;
-    for (let i = 1; i < times.length; i++) {
+    for (let i = 0; i < times.length; i++) {
         total = total + times[i];
     }
    
