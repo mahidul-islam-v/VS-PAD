@@ -1,30 +1,35 @@
 function matchWinner(teamAGoals, teamBGoals) {
+
+    if (typeof teamAGoals !== "number" || typeof teamBGoals !== "number") {
+        return "Invalid";
+    }
+
     if (teamAGoals > teamBGoals){
         return "Team A Won";
     } else if (teamBGoals > teamAGoals) {
         return "Team B Won";
-    } else if (teamAGoals === teamBGoals) {
+    } else{
         return "Draw";
-    } else {
-        return "Invalid";
     }
 }
 
 function isElevatorSafe(weights) {
+
+    if (!Array.isArray(weights)) {
+        return "Invalid";
+    }
+
     let totalWeight = 0;
     for (let i = 0; i < weights.length; i++) {
         totalWeight += weights[i];
     }
-    return totalWeight
+
     if (totalWeight <= 400) {
         return true;
-    } else if (totalWeight > 400) {
-        return false;
     } else {
-        return "Invalid";
+        return false;
     }
 }
 
 
-console.log(isElevatorSafe([10,20,"30"]))
-
+console.log(matchWinner(2,2))
