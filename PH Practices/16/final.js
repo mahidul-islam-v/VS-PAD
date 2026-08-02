@@ -41,8 +41,12 @@ function calculateAiCost(tokensUsed) {
     if (tokensUsed <= 500) {
         return 0;
     } else {
-        return Math.floor((tokensUsed-500)/100)*5
+        return Math.ceil((tokensUsed-500)/100)*5
     }
+
+    // !! There is a logic error in the sample test cases. We either have to consider charge after each 100 token used or consider the cost when the first token is used fro mthe next 100 token. If 650 token chrages 5 taka, then 1000 token should have charged 20 taka not 25. Or 650 token should have been charged 10 taka if 100 token charges 25 taka.
+    
+    // ? I went with the more realistic method, the 2nd one, which is 5 taka charged when you use the 1st token of the next 100.
 }
 
 
