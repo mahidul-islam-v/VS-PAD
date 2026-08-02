@@ -10,9 +10,10 @@ function matchWinner(teamAGoals, teamBGoals) {
     }
 }
 
-function isElevatorSafe() {
+function isElevatorSafe(weights) {
     
 }
+
 
 console.log(matchWinner(2,"2"))
 
