@@ -51,7 +51,18 @@ function topRatedRestaurant(restaurants) {
     if (!Array.isArray(restaurants) || restaurants.length == 0) {
         return "Invalid";
     }
+
+    ratings = restaurants.values()
+
+    Math.max(ratings)
+
+    return ratings
 }
 
 
-console.log(calculateAiCost(-11))
+console.log(
+    topRatedRestaurant([
+        { name: "Chillox", rating: 4.5 },
+        { name: "Sultan's Dine", rating: 4.8 },
+    ]),
+);
