@@ -10,5 +10,9 @@ function matchWinner(teamAGoals, teamBGoals) {
     }
 }
 
+function isElevatorSafe() {
+    
+}
+
 console.log(matchWinner(2,"2"))
 
