@@ -31,5 +31,9 @@ function isElevatorSafe(weights) {
     }
 }
 
+function calculateAiCost(tokensUsed) {
+    
+}
+
 
 console.log(matchWinner(2,2))
