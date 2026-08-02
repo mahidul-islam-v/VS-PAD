@@ -48,7 +48,9 @@ function calculateAiCost(tokensUsed) {
 }
 
 function topRatedRestaurant(restaurants) {
-    
+    if (!Array.isArray(restaurants) || restaurants.length == 0) {
+        return "Invalid";
+    }
 }
 
 
