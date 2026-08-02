@@ -47,5 +47,9 @@ function calculateAiCost(tokensUsed) {
     // ? I went with the more realistic method, the 2nd one, which is 5 taka charged when you use the 1st token of the next 100.
 }
 
+function topRatedRestaurant(restaurants) {
+    
+}
+
 
 console.log(calculateAiCost(-11))
