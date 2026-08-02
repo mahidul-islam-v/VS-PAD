@@ -11,9 +11,14 @@ function matchWinner(teamAGoals, teamBGoals) {
 }
 
 function isElevatorSafe(weights) {
-    
+    let totalWeight = 0;
+    for (let i = 0; i < weights.length; i++) {
+        totalWeight += weights[i];
+    }
+
+    return totalWeight
 }
 
 
-console.log(matchWinner(2,"2"))
+console.log(isElevatorSafe([10,20,30]))
 
