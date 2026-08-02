@@ -41,9 +41,9 @@ function calculateAiCost(tokensUsed) {
     if (tokensUsed <= 500) {
         return 0;
     } else {
-        return ((tokensUsed-400)%100)*5
+        return Math.ceil((tokensUsed-500)/100)*5
     }
 }
 
 
-console.log(matchWinner(2,2))
+console.log(calculateAiCost(-11))
