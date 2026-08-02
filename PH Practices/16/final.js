@@ -36,8 +36,6 @@ function calculateAiCost(tokensUsed) {
         return "Invalid";
     }
 
-    let cost = 5;
-
     if (tokensUsed <= 500) {
         return 0;
     } else {
