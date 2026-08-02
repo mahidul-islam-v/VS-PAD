@@ -52,11 +52,15 @@ function topRatedRestaurant(restaurants) {
         return "Invalid";
     }
 
-    ratings = restaurants.values()
+    let ratings = [];
 
-    Math.max(ratings)
+    for (let i = 0; i < restaurants.length; i++){
+        ratings.push(restaurants[i].rating)
+    }
 
-    return ratings
+    let name = restaurants[Math.max(...ratings)].name
+
+    return name
 }
 
 
