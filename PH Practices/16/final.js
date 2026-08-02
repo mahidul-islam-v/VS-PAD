@@ -60,6 +60,10 @@ function topRatedRestaurant(restaurants) {
         }
     }
     return topRestaurant.name.toUpperCase();
+
+    // !! There is no instructions given in case There are multiple restaurants with the highest rating.
+
+    // ? This code will consider the first highest rating in case there are multiple restaurants with highest ratings
 }
 
 function averageResponseTime(times) {
@@ -82,6 +86,3 @@ function averageResponseTime(times) {
   return total / times.length;
 }
 
-
-
-console.log(averageResponseTime([120, "200", 150]));
