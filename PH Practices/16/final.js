@@ -52,15 +52,14 @@ function topRatedRestaurant(restaurants) {
         return "Invalid";
     }
 
-    let ratings = [];
+    let topRestaurant = restaurants[0];
 
-    for (let i = 0; i < restaurants.length; i++){
-        ratings.push(restaurants[i].rating)
+    for (let i = 1; i < restaurants.length; i++){
+        if (restaurants[i].rating > topRestaurant.rating) {
+            topRestaurant = restaurants[i]
+        }
     }
-
-    let name = restaurants[ratings.indexOf(Math.max(...ratings))].name.toUpperCase();
-
-    return name;
+    return topRestaurant.name.toUpperCase();
 }
 
 
