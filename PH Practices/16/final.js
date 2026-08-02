@@ -41,7 +41,7 @@ function calculateAiCost(tokensUsed) {
     if (tokensUsed <= 500) {
         return 0;
     } else {
-        return Math.ceil((tokensUsed-500)/100)*5
+        return Math.floor((tokensUsed-500)/100)*5
     }
 }
 
