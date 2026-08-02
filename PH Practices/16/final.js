@@ -62,12 +62,23 @@ function topRatedRestaurant(restaurants) {
     return topRestaurant.name.toUpperCase();
 }
 
+function averageResponseTime(times) {
+  if (Array.isArray(times) == false) {
+        return "Invalid";
+   }
+   
+   if (times.length == 0) {
+        return "Invalid";
+    }
+   
+ let total = 0;
+    for (let i = 1; i < times.length; i++) {
+        total = total + times[i];
+    }
+   
+  return total / times.length;
+}
 
 
 
-console.log(
-    topRatedRestaurant([
-        { name: "KFC", rating: 4.2 },
-        { name: "Pizza Hut", rating: 4.6 },
-    ]),
-);
+console.log(averageResponseTime([120, 200, 150, 130]));
