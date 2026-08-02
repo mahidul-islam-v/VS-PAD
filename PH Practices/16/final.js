@@ -73,6 +73,9 @@ function averageResponseTime(times) {
    
  let total = 0;
     for (let i = 0; i < times.length; i++) {
+        if (typeof times[i] !== "number") {
+            return "Invalid";
+        }
         total = total + times[i];
     }
    
