@@ -58,11 +58,17 @@ function topRatedRestaurant(restaurants) {
         ratings.push(restaurants[i].rating)
     }
 
-    let name = restaurants[ratings.indexOf(Math.max(ratings))].name.toUpperCase();
+    let name = restaurants[ratings.indexOf(Math.max(...ratings))].name.toUpperCase();
+
     return name;
 }
 
 
 
 
-console.log(topRatedRestaurant([{name:"KFC",rating:4.2},{name:"Pizza Hut",rating:4.6}]));
+console.log(
+    topRatedRestaurant([
+        { name: "KFC", rating: 4.2 },
+        { name: "Pizza Hut", rating: 4.6 },
+    ]),
+);
