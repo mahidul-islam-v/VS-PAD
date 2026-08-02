@@ -15,10 +15,16 @@ function isElevatorSafe(weights) {
     for (let i = 0; i < weights.length; i++) {
         totalWeight += weights[i];
     }
-
     return totalWeight
+    if (totalWeight <= 400) {
+        return true;
+    } else if (totalWeight > 400) {
+        return false;
+    } else {
+        return "Invalid";
+    }
 }
 
 
-console.log(isElevatorSafe([10,20,30]))
+console.log(isElevatorSafe([10,20,"30"]))
 
