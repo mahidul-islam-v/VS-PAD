@@ -32,7 +32,17 @@ function isElevatorSafe(weights) {
 }
 
 function calculateAiCost(tokensUsed) {
-    
+    if (typeof tokensUsed !== "number" || tokensUsed < 0) {
+        return "Invalid";
+    }
+
+    let cost = 5;
+
+    if (tokensUsed <= 500) {
+        return 0;
+    } else {
+        return (tokensUsed-500)
+    }
 }
 
 
