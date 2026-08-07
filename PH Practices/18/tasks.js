@@ -7,7 +7,18 @@ const getLowestPrice = prices => Math.min(...prices)
 const swapValues = (a, b) => [b, a]
 
 const getEmployeeDept = employee => {
-        return { title: employee.job.title, department: employee.job.department }
-    }
+    return { title: employee.job.title, department: employee.job.department }
+}
     
-console.log(getEmployeeDept({ name: "Nadia", job: { title: "PM", department: "Product" } }));
+const promoteEmployee = (employee, newTitle) => {
+    return {
+        name: employee.name,
+        title: newTitle,
+    };
+}
+
+const sumAllPrices = prices => 
+
+console.log(
+    promoteEmployee({ name: "Rafi", title: "Junior Dev" }, "Senior Dev"),
+);
