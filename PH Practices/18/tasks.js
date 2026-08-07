@@ -4,6 +4,6 @@ const buildProfileCard = user => `${user.name}\n${user.title} at ${user.company}
 
 const getLowestPrice = prices => Math.min(...prices)
 
-const swapValues = (a, b) => 
+const swapValues = (a, b) => [b, a]
 
-console.log(getLowestPrice([340, 120, 560, 90]));
+console.log(swapValues(5, 10));
