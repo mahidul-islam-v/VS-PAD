@@ -6,4 +6,8 @@ const getLowestPrice = prices => Math.min(...prices)
 
 const swapValues = (a, b) => [b, a]
 
-console.log(swapValues(5, 10));
+const getEmployeeDept = employee => {
+        return { title: employee.job.title, department: employee.job.department }
+    }
+    
+console.log(getEmployeeDept({ name: "Nadia", job: { title: "PM", department: "Product" } }));
