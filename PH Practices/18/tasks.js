@@ -27,4 +27,6 @@ const sumAllPrices = prices => {
 
 const getManagerName = employee => employee?.manager?.name
 
-console.log(getManagerName({ name: "Rafi" }));
+const splitFirstRest = arr => { first: arr[0];  rest: arr.slice(1)} 
+
+console.log(splitFirstRest([10, 20, 30, 40]));
