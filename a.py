@@ -6,3 +6,6 @@ for i in range(years):
 	gold = gold*0.975
 
 print(gold)
+
+
+
