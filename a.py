@@ -1,13 +1,21 @@
-gold, years, sons, daughters = map(int, input().split())
+n = int(input())
 
-for i in range(1, years+1):
-    if gold>=85:
-        gold *= 0.975
-    else:
-        break
+odd_sum = 1
+prime_sum = 0
 
-x_factor = sons*2+daughters
-son_g = (gold*2/x_factor) if sons != 0 else 0
-daughter_g = (gold/x_factor) if daughters != 0 else 0
+def prime_check(param):
+	if param == 2 or param == 3:
+		return True
 
-print(f"{son_g:.10f} {daughter_g:.10f}")
+	if param % 2==0 or param % 3==0:
+		return False
+
+	sqrt = param**0.5
+	
+
+for i in range(2, n+1):
+	if i%2==1:
+		odd_sum+= i
+
+	if prime_check(i):
+		prime_sum+= i
