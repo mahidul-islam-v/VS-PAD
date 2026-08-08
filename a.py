@@ -1,16 +1,10 @@
-n = int(input())
+gold, years, sons, daughters = map(int, input().split())
 
-for _ in range(n):
-	n_apple, queries = map(int, input().split())
+gold = gold*(0.975**years)
 
-	belt = [int(x) for x in input().split()]
-	binary_belt = [0]*(n_apple+1)
+x_factor = sons*2+daughters
 
-	for i in range(n_apple):
-		binary_belt[i+1]= binary_belt[i]+(1 if belt[i]>=0 else 0)
+son_g = (gold*2/x_factor) if sons != 0 else 0
+daughter_g = (gold/x_factor) if daughters != 0 else 0
 
-
-	for _ in range(queries):
-		start, end = map(int, input().split())
-
-		print(binary_belt[end]-binary_belt[start-1])
+print(f"{son_g:.10f} {daughter_g:.10f}")
