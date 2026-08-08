@@ -5,4 +5,4 @@ n = int(input())
 for _ in range(n):
     angle, rad, side = map(float, input().split())
     angle_deg = angle*180/math.pi
-    print(f"{((math.sin(angle)*side*side/2)-math.pi*rad*rad*angle_deg/360):.8f}")
+    print(f"Case {_}: {((math.sin(angle)*side*side/2)-math.pi*rad*rad*angle_deg/360):.8f}")
