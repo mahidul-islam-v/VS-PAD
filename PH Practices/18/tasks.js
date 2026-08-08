@@ -28,7 +28,8 @@ const sumAllPrices = prices => {
 const getManagerName = employee => employee?.manager?.name
 
 const splitFirstRest = arr => {
-    let [first, ...rest] = [arr]
+    okay = arr
+    let [first, ...rest] = okay
     return { first: first, rest: rest}
 }
 
