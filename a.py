@@ -7,5 +7,4 @@ for i in range(years):
 
 print(gold)
 
-
-
+x_factor = sons*2+daughters
