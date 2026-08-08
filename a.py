@@ -13,10 +13,21 @@ def prime_check(param):
 	if (param + 1)/6 %1 == 0 or (param - 1)/6 % 1 == 0:
 		return True
 
-
-for i in range(2, n+1):
-	if i%2==1:
+odd_count = 0
+for i in range(2, 1000):
+	if i%2==1 and odd_count<=n:
+		odd_count+= 1
 		odd_sum+= i
+	else:
+		break
 
+prime_count = 0
+for i in range(2, 1000):
+	if prime_check(i) and prime_count<=n:
+		prime_count+= 1
+		prime_sum+= i
+		print(i)
+	else:
+		break
 
 print(abs(odd_sum-prime_sum))
