@@ -1,8 +1,11 @@
-import math
+gold, years, sons, daughters = map(int, input().split())
 
-n = int(input())
+for i in range(1, years+1):
+    if gold>=85:
+        gold *= 0.075
 
-for _ in range(n):
-    angle, rad, side = map(float, input().split())
-    angle_deg = angle*180/math.pi
-    print(f"Case {_}: {((math.sin(angle)*side*side/2)-math.pi*rad*rad*angle_deg/360):.8f}")
+x_factor = sons*2+daughters
+son_g = (gold*2/x_factor) if sons != 0 else 0
+daughter_g = (gold/x_factor) if daughters != 0 else 0
+
+print(f"{son_g:.10f} {daughter_g:.10f}")
