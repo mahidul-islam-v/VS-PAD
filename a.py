@@ -10,8 +10,9 @@ def prime_check(param):
 	if param % 2==0 or param % 3==0:
 		return False
 
-	sqrt = param**0.5
-	
+	if (param + 1)/6 %1 == 0 or (param - 1)/6 % 1 == 0:
+		return True
+
 
 for i in range(2, n+1):
 	if i%2==1:
@@ -19,3 +20,5 @@ for i in range(2, n+1):
 
 	if prime_check(i):
 		prime_sum+= i
+
+print()
