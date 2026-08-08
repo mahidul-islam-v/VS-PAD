@@ -1,10 +1,17 @@
-import math
+n = int(input())
 
-gold, years, sons, daughters = map(int, input().split())
+for _ in range(n):
+	n_apple, queries = map(int, input().split())
 
-for i in range(years):
-	gold = gold*0.975
+	belt = [int(x) for x in input().split()]
 
-x_factor = sons*2+daughters
+	for _ in range(queries):
+		start, end = map(int, input().split())
 
-print(f"{(gold*2/x_factor):.10f} {(gold/x_factor):.10f}")
+		positive = 0
+
+		for i in range(start-1, end-1):
+			if belt[i]>= 0:
+				positive+= 1
+
+		print(positive)
