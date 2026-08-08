@@ -10,10 +10,12 @@ def prime_check(param):
 	if param % 2==0 or param % 3==0:
 		return False
 
-	if (param + 1)/6 %1 == 0 or (param - 1)/6 % 1 == 0:
-		if param == 25:
-			print(11111)
-		return True
+	for k in range(5, param**0.5):
+		if (k + 1)/6 %1 == 0 or (k - 1)/6 % 1 == 0:
+			if param % k:
+				return False
+
+	return True
 
 odd_count = 0
 for i in range(2, 1000):
