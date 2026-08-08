@@ -11,6 +11,8 @@ def prime_check(param):
 		return False
 
 	if (param + 1)/6 %1 == 0 or (param - 1)/6 % 1 == 0:
+		if param == 25:
+			print(11111)
 		return True
 
 odd_count = 0
