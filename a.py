@@ -1,7 +1,4 @@
 import math
 
-n, limit, rate = map(int, input().split())
+gold, years, sons, daughters = map(int, input().split())
 
-trucks = math.ceil(n/limit)
-
-print(trucks, trucks*rate)
