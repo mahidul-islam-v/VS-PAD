@@ -5,31 +5,33 @@ prime_sum = 0
 
 def prime_check(param):
 	if param == 2 or param == 3:
-		print("a")
 		return True
 
 	if param % 2==0 or param % 3==0:
-		print("b")
 		return False
 
 	if (param + 1)/6 %1 == 0 or (param - 1)/6 % 1 == 0:
-		print("c")
 		return True
 
 odd_count = 0
 for i in range(2, 1000):
-	if i%2==1 and odd_count<=n:
-		odd_count+= 1
-		odd_sum+= i
+	if odd_count<n:
+		if i%2==1:
+			odd_count+= 1
+			odd_sum+= i
+			
+			print(i)
 	else:
 		break
 
 prime_count = 0
 for i in range(2, 1000):
-	if prime_check(i) and prime_count<=n:
-		prime_count+= 1
-		prime_sum+= i
-		print(i)
+	if prime_count<n:
+		if prime_check(i):
+			prime_count+= 1
+			prime_sum+= i
+			
+			print(i)
 	else:
 		break
 
