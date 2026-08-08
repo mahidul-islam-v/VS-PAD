@@ -10,7 +10,7 @@ for _ in range(n):
 
 		positive = 0
 
-		for i in range(start-1, end-1):
+		for i in range(start-1, end):
 			if belt[i]>= 0:
 				positive+= 1
 
