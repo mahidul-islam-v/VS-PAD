@@ -7,4 +7,7 @@ for i in range(years):
 
 x_factor = sons*2+daughters
 
-print(gold*2/x_factor, gold/x_factor)
+s = gold*2/x_factor, gold/x_factor
+d = gold/x_factor, gold/x_factor
+
+print(f"{s:.10f}")
