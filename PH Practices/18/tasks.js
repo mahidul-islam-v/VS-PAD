@@ -25,6 +25,6 @@ const sumAllPrices = prices => {
     return x
 }
 
-const getManagerName = employee => employee.manager.name ? employee.manager.name : undefined
+const getManagerName = employee => employee?.manager?.name
 
 console.log(getManagerName({ name: "Rafi" }));
