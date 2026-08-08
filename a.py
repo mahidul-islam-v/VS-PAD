@@ -1,6 +1,6 @@
 n = int(input())
 
-odd_sum = 1
+odd_sum = 0
 prime_sum = 0
 
 def prime_check(param):
@@ -18,7 +18,7 @@ def prime_check(param):
 	return True
 
 odd_count = 0
-for i in range(2, 1000):
+for i in range(1, 1000):
 	if odd_count<n:
 		if i%2==1:
 			odd_count+= 1
