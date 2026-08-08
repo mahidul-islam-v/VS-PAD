@@ -27,6 +27,9 @@ const sumAllPrices = prices => {
 
 const getManagerName = employee => employee?.manager?.name
 
-const splitFirstRest = arr => { first: arr[0];  rest: arr.slice(1)} 
+const splitFirstRest = arr => {
+    let [first, ...rest] = [arr]
+    return { first: first, rest: rest}
+}
 
 console.log(splitFirstRest([10, 20, 30, 40]));
