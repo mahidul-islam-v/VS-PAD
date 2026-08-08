@@ -10,9 +10,9 @@ def prime_check(param):
 	if param % 2==0 or param % 3==0:
 		return False
 
-	for k in range(5, param**0.5):
+	for k in range(5, int(param**0.5)+1):
 		if (k + 1)/6 %1 == 0 or (k - 1)/6 % 1 == 0:
-			if param % k:
+			if param % k==0:
 				return False
 
 	return True
@@ -23,8 +23,6 @@ for i in range(2, 1000):
 		if i%2==1:
 			odd_count+= 1
 			odd_sum+= i
-			
-			print(i)
 	else:
 		break
 
@@ -34,8 +32,6 @@ for i in range(2, 1000):
 		if prime_check(i):
 			prime_count+= 1
 			prime_sum+= i
-			
-			print(i)
 	else:
 		break
 
