@@ -21,4 +21,6 @@ for i in range(2, n+1):
 	if prime_check(i):
 		prime_sum+= i
 
+	print(i, 00000)
+
 print(abs(odd_sum-prime_sum))
