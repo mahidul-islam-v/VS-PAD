@@ -2,7 +2,9 @@ gold, years, sons, daughters = map(int, input().split())
 
 for i in range(1, years+1):
     if gold>=85:
-        gold *= 0.075
+        gold *= 0.975
+    else:
+        break
 
 x_factor = sons*2+daughters
 son_g = (gold*2/x_factor) if sons != 0 else 0
