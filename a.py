@@ -1,10 +1,7 @@
-gold, years, sons, daughters = map(int, input().split())
+import math
 
-gold = gold*(0.975**years)
+n = int(input())
 
-x_factor = sons*2+daughters
-
-son_g = (gold*2/x_factor) if sons != 0 else 0
-daughter_g = (gold/x_factor) if daughters != 0 else 0
-
-print(f"{son_g:.10f} {daughter_g:.10f}")
+for _ in range(n):
+    angle, rad, side = map(int, input().split())
+    print()
