@@ -17,8 +17,14 @@ const promoteEmployee = (employee, newTitle) => {
     };
 }
 
-const sumAllPrices = prices => 
+const sumAllPrices = prices => {
+    let x = 0
+    for (price of prices) {
+        x += price
+    }
+    return x
+}
 
-console.log(
-    promoteEmployee({ name: "Rafi", title: "Junior Dev" }, "Senior Dev"),
-);
+const getManagerName = employee => employee.manager.name ? employee.manager.name : undefined
+
+console.log(getManagerName({ name: "Rafi" }));
