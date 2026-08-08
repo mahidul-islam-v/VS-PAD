@@ -33,4 +33,12 @@ const splitFirstRest = arr => {
     return { first: first, rest: rest}
 }
 
-console.log(splitFirstRest([10, 20, 30, 40]));
+const cloneAndUpdate = (arr, index, newValue) => {
+    newArr = [...arr]
+    newArr[index] = newValue
+
+    return newArr
+}
+
+
+console.log(cloneAndUpdate([5, 10, 15], 1, 99));
