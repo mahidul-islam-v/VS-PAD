@@ -5,12 +5,15 @@ prime_sum = 0
 
 def prime_check(param):
 	if param == 2 or param == 3:
+		print("a")
 		return True
 
 	if param % 2==0 or param % 3==0:
+		print("b")
 		return False
 
 	if (param + 1)/6 %1 == 0 or (param - 1)/6 % 1 == 0:
+		print("c")
 		return True
 
 odd_count = 0
