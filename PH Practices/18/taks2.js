@@ -1,3 +1,11 @@
 const getFormattedPrices = prices => prices.map(price => `$${price}`)
 
-console.log(getFormattedPrices([100, 250, 75]));
+const getAvailableProducts = products => products.filter(product => product.stock > 0)
+    
+console.log(
+    getAvailableProducts([
+        { name: "Pen", stock: 5 },
+        { name: "Bag", stock: 0 },
+        { name: "Notebook", stock: 2 },
+    ]),
+);
