@@ -14,9 +14,16 @@ const applyBonusPoints = (users, bonus) => users.map(user =>{
     return { ...user, points: user.points + bonus }
 })
 
-const getTopSellingProduct = orders => 
+const getTopSellingProduct = orders => {
+    obj = orders.reduce((accumulator, cur) => accumulator ? accumulator.unitsSold > cur.unitsSold : cur, undefined)
+    return obj.product
+}
 
 
 console.log(
-    applyBonusPoints((users = [{ name: "Rafi", points: 20 }]), (bonus = 5)),
+    getTopSellingProduct([
+        { product: "Pen", unitsSold: 30 },
+        { product: "Bag", unitsSold: 12 },
+        { product: "Pen", unitsSold: 25 },
+    ]),
 );
