@@ -7,8 +7,10 @@ function studentIntroduction(student) {
 }
 
 function filterActiveUsers(users) {
-    // Write your code here
+    if (typeof (users) != "array" || users.length == 0 || users.filter(user => user.isActive) != []) {
+        return users.filter((user) => user.isActive);
+    }
 }
 
 
-console.log(studentIntroduction("student"));
+console.log(filterActiveUsers([{name:"A", isActive:true},{name:"B", isActive:false}]));
