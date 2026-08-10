@@ -63,7 +63,7 @@ function generateLeaderboard(students) {
         student.score >= 70;
     });
 
-    const names = qualified.map(({ name }) => {
+    const names = qualified.map((name) => {
         name.toUpperCase();
     });
 
