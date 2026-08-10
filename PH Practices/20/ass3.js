@@ -20,7 +20,7 @@ function countHashtags(caption) {
     } else {
         const words = [...caption.split(" ")];
         const tags = words.filter(word => word.startsWith("#"));
-        longest = tags.reduce(
+        const longest = tags.reduce(
             (longest, cur) => (longest.length >= cur.length ? longest : cur),
             "",
         );
