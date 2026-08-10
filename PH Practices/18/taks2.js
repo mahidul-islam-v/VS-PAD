@@ -7,13 +7,17 @@ const findProductByName = (products, name) => products.find(product => product.n
 const getTotalStockValue = products => products.reduce((accumulator, cur) => accumulator + cur.price * cur.stock, 0)
 
 const getDiscountedTotalForCategory = (products, category) => products.filter(product => product.category == category).map(product => product.price * 0.9).reduce((accumulator, cur) => accumulator + cur, 0)
+
+const sortByPriceAscending = products => {
+    return products.sort((a,b)=> a.price - b.price) 
+}
+
+
+
 console.log(
-    getDiscountedTotalForCategory(
-        (products = [
-            { name: "Pen", category: "stationery", price: 100 },
-            { name: "Bag", category: "accessory", price: 500 },
-            { name: "Notebook", category: "stationery", price: 60 },
-        ]),
-        (category = "stationery"),
-    ),
+    sortByPriceAscending([
+        { name: "Bag", price: 500 },
+        { name: "Pen", price: 10 },
+        { name: "Notebook", price: 60 },
+    ]),
 );
