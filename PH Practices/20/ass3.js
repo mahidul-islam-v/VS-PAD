@@ -16,17 +16,17 @@ function filterActiveUsers(users) {
 
 function countHashtags(caption) {
     words = [...caption.split(" ")]
-    tags = words.filter(word => word[0] == "#").length
-    longest = words.reduce(
+    tags = words.filter(word => word[0] == "#")
+    longest = tags.reduce(
         (longest, cur) => (longest.length > cur.length ? longest : cur),
         "",
     );
 
     return {
-        hashtagCount: tags,
+        hashtagCount: tags.length,
         longestTag: longest
     };
 }
 
 
-console.log(countHashtags("No hashtags here"));
+console.log(countHashtags("Loving this weather today #sunny #vibes #weekend"));
