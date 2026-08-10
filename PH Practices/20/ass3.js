@@ -14,5 +14,9 @@ function filterActiveUsers(users) {
     }
 }
 
+function countHashtags(caption) {
+    caption = caption.split(" ")
+}
 
-console.log(filterActiveUsers("users"));
+
+console.log(countHashtags("Loving this weather today #sunny #vibes #weekend"));
