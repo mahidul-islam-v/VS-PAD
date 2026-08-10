@@ -7,8 +7,8 @@ const findProductByName = (products, name) => products.find(product => product.n
 const getTotalStockValue = products => products.reduce((accumulator, cur) => accumulator + cur.price * cur.stock, 0)
 
 const getDiscountedTotalForCategory = (products, category) => {
-    obj = products.find(product => product.category == category)
-    
+    obj = products.find(product => product.category == category).map(product => product.price*= 0.9).reduce((accumulator,cur) => accumulator + cur.price , 0)
+
 }
 console.log(
     getDiscountedTotalForCategory(
