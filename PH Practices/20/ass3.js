@@ -15,7 +15,7 @@ function filterActiveUsers(users) {
 }
 
 function countHashtags(caption) {
-    caption = caption.split(" ")
+    return caption = caption.split(" ")
 }
 
 
