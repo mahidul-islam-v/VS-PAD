@@ -70,7 +70,3 @@ function generateLeaderboard(students) {
     return names.slice(0, 3);
 }
 
-
-
-
-console.log(generateLeaderboard([{ name: "Rafi", score: "90" }]));
