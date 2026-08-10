@@ -15,18 +15,22 @@ function filterActiveUsers(users) {
 }
 
 function countHashtags(caption) {
-    words = [...caption.split(" ")]
-    tags = words.filter(word => word[0] == "#")
-    longest = tags.reduce(
-        (longest, cur) => (longest.length > cur.length ? longest : cur),
-        "",
-    );
+    if (typeof caption != "string") {
+        return "Invalid";
+    } else {
+        words = [...caption.split(" ")];
+        tags = words.filter(word => word.startsWith("#"));
+        longest = tags.reduce(
+            (longest, cur) => (longest.length >= cur.length ? longest : cur),
+            "",
+        );
 
-    return {
-        hashtagCount: tags.length,
-        longestTag: longest
-    };
+        return {
+            hashtagCount: tags.length,
+            longestTag: longest.slice(1),
+        };
+    }
 }
 
 
-console.log(countHashtags("Loving this weather today #sunny #vibes #weekend"));
+console.log(countHashtags(123));
