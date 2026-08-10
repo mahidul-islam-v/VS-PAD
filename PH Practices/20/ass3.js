@@ -7,7 +7,7 @@ function studentIntroduction(student) {
 }
 
 function filterActiveUsers(users) {
-    if (!Array.isArray(users) || users.length == 0 || users.filter((user) => user.isActive==undefined).length != 0) {
+    if (!Array.isArray(users) || users.length == 0 || users.find((user) => user.isActive==undefined)) {
         return "Invalid"
     } else {
         return users.filter(user => user.isActive == true)
@@ -34,9 +34,14 @@ function countHashtags(caption) {
 
 
 function bonusScore(scores) {
+    if (!Array.isArray(scores) || scores.length == 0 || scores.find(score => typeof (score) != "number")) {
+        return "Invalid"
+    } else {
+        return scores.map(score => score+10).reduce((total, cur) => total+cur, 0)
+    }
     
 }
 
 
 
-console.log(bonusScore([80, 65, 90, 75]));
+console.log(bonusScore([80, "90", 70]));
