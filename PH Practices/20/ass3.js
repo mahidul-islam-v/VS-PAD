@@ -60,7 +60,7 @@ function generateLeaderboard(students) {
     }
 
     const qualified = students.filter(student => {
-        student.score > 70;
+        student.score >= 70;
     });
 
     const names = qualified.map(({ name }) => {
