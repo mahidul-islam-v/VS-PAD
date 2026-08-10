@@ -51,6 +51,14 @@ function generateLeaderboard(students) {
         return "Invalid";
     }
 
+    if (students.find(student => (student.name == undefined || student.score == undefined))) {
+        return "Invalid";
+    }
+
+    if (students.find(student => typeof (student.score) != "number")) {
+        return "Invalid"
+    }
+
     const qualified = students.filter(student => {
         student.score > 70;
     });
