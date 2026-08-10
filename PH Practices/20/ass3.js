@@ -67,10 +67,17 @@ function generateLeaderboard(students) {
         name.toUpperCase();
     });
 
-    return names.slice(0, 2);
+    return names.slice(0, 3);
 }
 
 
 
 
-console.log(bonusScore([80, "90", 70]));
+console.log(
+    generateLeaderboard([
+        { name: "Rafi", score: 90 },
+        { name: "Sadia", score: 65 },
+        { name: "Karim", score: 85 },
+        { name: "Nafis", score: 75 },
+    ]),
+);
