@@ -15,7 +15,7 @@ const applyBonusPoints = (users, bonus) => users.map(user =>{
 })
 
 const getTopSellingProduct = orders => {
-    obj = orders.reduce((accumulator, cur) => accumulator ? accumulator.unitsSold > cur.unitsSold : cur, undefined)
+    obj = orders.reduce((accumulator, cur) => accumulator.unitsSold > cur.unitsSold ? accumulator : cur, {unitsSold: 0})
     return obj.product
 }
 
