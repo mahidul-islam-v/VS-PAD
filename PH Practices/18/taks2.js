@@ -9,9 +9,4 @@ const getTotalStockValue = products => products.reduce((accumulator, cur) => acc
 const getDiscountedTotalForCategory = (products, category) => {
     
 }
-    console.log(
-        getTotalStockValue([
-            { price: 50, stock: 4 },
-            { price: 20, stock: 10 },
-        ]),
-    );
+console.log(getTotalStockValue([{ price: 50, stock: 4 },{ price: 20, stock: 10 },]),);
