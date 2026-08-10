@@ -18,8 +18,8 @@ function countHashtags(caption) {
     if (typeof caption != "string") {
         return "Invalid";
     } else {
-        words = [...caption.split(" ")];
-        tags = words.filter(word => word.startsWith("#"));
+        const words = [...caption.split(" ")];
+        const tags = words.filter(word => word.startsWith("#"));
         longest = tags.reduce(
             (longest, cur) => (longest.length >= cur.length ? longest : cur),
             "",
