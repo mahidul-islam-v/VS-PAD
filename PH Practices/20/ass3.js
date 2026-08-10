@@ -42,6 +42,27 @@ function bonusScore(scores) {
     
 }
 
+function generateLeaderboard(students) {
+    if (!Array.isArray(students)) {
+        return "Invalid";
+    }
+
+    if (students.length == 0) {
+        return "Invalid";
+    }
+
+    const qualified = students.filter(student => {
+        student.score > 70;
+    });
+
+    const names = qualified.map(({ name }) => {
+        name.toUpperCase();
+    });
+
+    return names.slice(0, 2);
+}
+
+
 
 
 console.log(bonusScore([80, "90", 70]));
