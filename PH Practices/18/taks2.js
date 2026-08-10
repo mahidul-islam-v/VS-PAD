@@ -10,17 +10,11 @@ const getDiscountedTotalForCategory = (products, category) => products.filter(pr
 
 const sortByPriceAscending = products => products.sort((a,b)=> a.price - b.price) 
 
-const applyBonusPoints = (users, bonus) => {
-    arr = [...users]
-    arr.map(user => {
-        arr2 = user
-        arr2.points += bonus
-
-        return arr2
+const applyBonusPoints = (users, bonus) => users.map(user => {
+    return {
+        ...user, points: user.points + bonus
     }
-    )
-    return arr
-}
+})
 
 
 console.log(
