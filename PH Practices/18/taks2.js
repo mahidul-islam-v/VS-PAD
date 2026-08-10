@@ -14,6 +14,8 @@ const applyBonusPoints = (users, bonus) => users.map(user =>{
     return { ...user, points: user.points + bonus }
 })
 
+const getTopSellingProduct = orders => 
+
 
 console.log(
     applyBonusPoints((users = [{ name: "Rafi", points: 20 }]), (bonus = 5)),
