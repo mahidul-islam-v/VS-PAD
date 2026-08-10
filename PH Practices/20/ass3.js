@@ -33,4 +33,10 @@ function countHashtags(caption) {
 }
 
 
-console.log(countHashtags(123));
+function bonusScore(scores) {
+    
+}
+
+
+
+console.log(bonusScore([80, 65, 90, 75]));
