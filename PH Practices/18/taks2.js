@@ -7,6 +7,16 @@ const findProductByName = (products, name) => products.find(product => product.n
 const getTotalStockValue = products => products.reduce((accumulator, cur) => accumulator + cur.price * cur.stock, 0)
 
 const getDiscountedTotalForCategory = (products, category) => {
+    obj = products.find(product => product.category == category)
     
 }
-console.log(getTotalStockValue([{ price: 50, stock: 4 },{ price: 20, stock: 10 },]),);
+console.log(
+    getDiscountedTotalForCategory(
+        (products = [
+            { name: "Pen", category: "stationery", price: 100 },
+            { name: "Bag", category: "accessory", price: 500 },
+            { name: "Notebook", category: "stationery", price: 60 },
+        ]),
+        (category = "stationery"),
+    ),
+);
