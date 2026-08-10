@@ -8,10 +8,15 @@ const getTotalStockValue = products => products.reduce((accumulator, cur) => acc
 
 const getDiscountedTotalForCategory = (products, category) => products.filter(product => product.category == category).map(product => product.price * 0.9).reduce((accumulator, cur) => accumulator + cur, 0)
 
-const sortByPriceAscending = products => {
-    return products.sort((a,b)=> a.price - b.price) 
-}
+const sortByPriceAscending = products => products.sort((a,b)=> a.price - b.price) 
 
+const applyBonusPoints = (users, bonus) => {
+    arr = [...users]
+    arr.map(user => {
+        
+    }
+    )
+}
 
 
 console.log(
