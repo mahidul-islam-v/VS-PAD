@@ -13,16 +13,16 @@ const sortByPriceAscending = products => products.sort((a,b)=> a.price - b.price
 const applyBonusPoints = (users, bonus) => {
     arr = [...users]
     arr.map(user => {
-        
+        arr2 = user
+        arr2.points += bonus
+
+        return arr2
     }
     )
+    return arr
 }
 
 
 console.log(
-    sortByPriceAscending([
-        { name: "Bag", price: 500 },
-        { name: "Pen", price: 10 },
-        { name: "Notebook", price: 60 },
-    ]),
+    applyBonusPoints((users = [{ name: "Rafi", points: 20 }]), (bonus = 5)),
 );
