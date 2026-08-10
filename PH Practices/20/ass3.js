@@ -7,8 +7,10 @@ function studentIntroduction(student) {
 }
 
 function filterActiveUsers(users) {
-    if (typeof (users) != "array" || users.length == 0 || users.filter(user => user.isActive) != []) {
-        return users.filter((user) => user.isActive);
+    if (typeof (users) != "array" || users.length == 0 || users.filter((user) => user.isActive==undefined).length != 0) {
+        return (
+            `${users.filter((user) => user.isActive == undefined).length} ${ typeof users } ${ users.length } `
+        );
     }
 }
 
