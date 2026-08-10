@@ -7,10 +7,12 @@ function studentIntroduction(student) {
 }
 
 function filterActiveUsers(users) {
-    if (typeof (users) != "array" || users.length == 0 || users.filter((user) => user.isActive==undefined).length != 0) {
-        return 222111
+    if (!Array.isArray(users) || users.length == 0 || users.filter((user) => user.isActive==undefined).length != 0) {
+        return "Invalid"
+    } else {
+        return users.filter(user => user.isActive == true)
     }
 }
 
 
-console.log(filterActiveUsers([{name:"A", isActive:true},{name:"B", isActive:false}]));
+console.log(filterActiveUsers("users"));
