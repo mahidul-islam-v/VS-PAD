@@ -2,4 +2,5 @@
 const printUser = (name = "user", age = 0) => console.log(`${name} is ${age} years old.`);
 const nayme = ["Me", 2020];
 const mailTo = (obj) => obj.name + ' ' + (obj.mail ? obj.mail : "Not given");
+const chckr = (numba) => numba % 2 == 0 ? "even" : "odd";
 console.log(mailTo({ name: "me", mail: "hah" }));
