@@ -5,7 +5,10 @@ const nayme: [string, number] = ["Me", 2020];
 
 const mailTo = (obj: { name: string, mail?: string }): string => obj.name + ' ' + (obj.mail ? obj.mail : "Not given") 
 
-const chckr = (numba:number):string => numba%2==0 ? "even" : "odd" 
+const chckr = (numba: number): string => numba % 2 == 0 ? "even" : "odd";
 
+const summr = (...numba:number[]):number => numba.reduce((acc:number, curr:number):number => acc+curr, 0) 
 
-console.log(mailTo({name: "me", mail: "hah"}))
+const mrgr = (a1:number[], a2:number[]):number[] => [...a1, ...a2]
+
+console.log(mrgr([1, 2, 3, 4], [11, 22, 33, 44]));
