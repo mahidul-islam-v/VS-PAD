@@ -9,6 +9,6 @@ const chckr = (numba: number): string => numba % 2 == 0 ? "even" : "odd";
 
 const summr = (...numba:number[]):number => numba.reduce((acc:number, curr:number):number => acc+curr, 0) 
 
-const mrgr = (a1:number[], a2:number[]):number[] => [...a1, ...a2]
+const mrgr = (...numbers:number[]):number[] => [...numbers]
 
-console.log(mrgr([1, 2, 3, 4], [11, 22, 33, 44]));
+console.log(mrgr(1, 2, 3, 411, 22, 33, 44));
