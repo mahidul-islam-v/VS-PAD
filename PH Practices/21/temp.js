@@ -1,4 +1,3 @@
 "use strict";
-let me = "mahi";
-const wth = 222;
-console.log(me);
+const printUser = (name, age) => console.log(`${name} is ${age} years old.`);
+printUser("Amina", 22);
