@@ -16,7 +16,6 @@ function getBatteryStatus(percentage: number): string {
 
     return result;
 }
-console.log(getBatteryStatus(50));
 
 // Problem 02
 interface Booking {
@@ -24,8 +23,13 @@ interface Booking {
     guests: number;
     time: string;
 }
-
 function formatBookingConfirmation(booking: Booking): string {
     return `${booking.name}'s table for ${booking.guests} guests is confirmed at ${booking.time}.`;
 }
-console.log(formatBookingConfirmation({ name: "Aisha", guests: 4, time: "7:00 PM" }))
+
+// Problem 03
+function calculateWeeklyTotal(expenses: number[]): number {
+    return expenses.reduce((acc:number, carry:number): number => acc+carry, 0)
+}
+
+console.log(calculateWeeklyTotal([]));

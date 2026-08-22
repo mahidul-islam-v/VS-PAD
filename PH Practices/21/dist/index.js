@@ -20,9 +20,12 @@ function getBatteryStatus(percentage) {
     }
     return result;
 }
-console.log(getBatteryStatus(50));
 function formatBookingConfirmation(booking) {
     return `${booking.name}'s table for ${booking.guests} guests is confirmed at ${booking.time}.`;
 }
-console.log(formatBookingConfirmation({ name: "Aisha", guests: 4, time: "7:00 PM" }));
+// Problem 03
+function calculateWeeklyTotal(expenses) {
+    return expenses.reduce((acc, carry) => acc + carry, 0);
+}
+console.log(calculateWeeklyTotal([]));
 //# sourceMappingURL=index.js.map
