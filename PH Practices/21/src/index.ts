@@ -1,4 +1,7 @@
-let val:unknown = "Hello TypeScript";
+let val: unknown = "Hello TypeScript";
 
+let numba: string | number = "100"
 
-console.log(<boolean>val);
+const number = typeof(numba) === "number" ? numba : Number(numba)
+
+console.log(number+10);
