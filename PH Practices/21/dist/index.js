@@ -1,26 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let val = "Hello TypeScript";
-let numba = "100";
-const number = typeof (numba) === "number" ? numba : Number(numba);
-const p1 = {
-    title: "one",
-    price: 9.99,
-    inStock: true,
-};
-const p2 = {
-    title: "Two",
-    price: 0.99
-};
-function printPrice(product) {
-    console.log(product.price);
+function getBatteryStatus(percentage) {
+    let result;
+    if (percentage >= 0 && percentage <= 20) {
+        result = "Low";
+    }
+    else if (percentage >= 21 && percentage <= 50) {
+        result = "Medium";
+    }
+    else if (percentage >= 51 && percentage <= 90) {
+        result = "High";
+    }
+    else if (percentage >= 91 && percentage <= 100) {
+        result = "Full";
+    }
+    else {
+        result = "Invalid Input";
+    }
+    return result;
 }
-const o1 = {
-    id: 1,
-    pay: "card"
-};
-function getLastElement(arr) {
-    return arr.at(-1);
-}
-console.log(getLastElement(["1", "a"]));
+console.log(getBatteryStatus(50));
 //# sourceMappingURL=index.js.map

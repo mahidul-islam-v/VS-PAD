@@ -1,55 +1,33 @@
-let val: unknown = "Hello TypeScript";
+// Problem 01
+function getBatteryStatus(percentage: number): string {
+    let result: string
 
-let numba: string | number = "100"
+    if (percentage >= 0 && percentage <= 20) {
+        result = "Low";
+    } else if (percentage >= 21 && percentage <= 50) {
+        result = "Medium";
+    } else if (percentage >= 51 && percentage <= 90) {
+        result = "High";
+    } else if (percentage >= 91 && percentage <= 100) {
+        result = "Full";
+    } else {
+        result = "Invalid Input";
+    }
 
-const number = typeof (numba) === "number" ? numba : Number(numba)
+    return result;
+}
+console.log(getBatteryStatus(50));
 
-interface Product {
-    title: string;
-    price: number;
-    inStock?: boolean;
+// Problem 02
+interface Booking {
+    name: string;
+    guests: number;
+    time: string;
 }
 
-const p1: Product = {
-    title: "one",
-    price: 9.99,
-    inStock: true,
-}
-const p2: Product = {
-    title: "Two",
-    price: 0.99
-};
-
-function printPrice(product:Product):void {
-    console.log(product.price)
-}
-
-type PaymentMethod = "cash" | "card" | "mobile";
-interface Order {
-    id: number;
-    pay: PaymentMethod;
-}
-
-const o1: Order = {
-    id: 1,
-    pay: "card"
+function formatBookingConfirmation(booking: Booking): string {
+    return "aa"
 }
 
 
-
-function getLastElement<T> (arr: T[]): T|undefined {
-    return arr.at(-1);
-}
-
-
-
-interface Container<T> {
-    item: T;
-}
-
-const c1: Container<string> = {
-    item: "Book"
-};
-const c2: Container<number> = {
-    item: 222
-};
+console.log(getBatteryStatus(50));
