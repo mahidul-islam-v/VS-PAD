@@ -29,7 +29,7 @@ function formatBookingConfirmation(booking: Booking): string {
 
 // Problem 03
 function calculateWeeklyTotal(expenses: number[]): number {
-    return expenses.reduce((acc:number, carry:number): number => acc+carry, 0)
+    return expenses.reduce((acc:number, cur:number): number => acc+cur, 0)
 }
 
 // Problem 04
@@ -39,12 +39,12 @@ function getTrafficAction(light: Light): string {
 }
 
 // Problem 05
-interface Score {
+interface Summary {
     total: number;
     average: number;
 }
-function getQuizSummary(scores: number[]): Score  {
-    let t: number = scores.reduce((acc: number, carry: number): number => acc + carry, 0)
+function getQuizSummary(scores: number[]): Summary  {
+    let t: number = scores.reduce((acc: number, cur: number): number => acc + cur, 0)
     let a: number = scores.length == 0 ? 0 : (t/scores.length)
     return {
         total: t,
