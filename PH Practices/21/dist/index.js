@@ -1,10 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function useState(inputValue) {
-    function callMe(newInput) {
-        return newInput;
-    }
-    return [inputValue, callMe(inputValue)];
-}
-console.log(useState("Yamete"));
+let val = "Hello TypeScript";
+console.log(val);
 //# sourceMappingURL=index.js.map

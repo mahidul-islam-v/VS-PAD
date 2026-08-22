@@ -1,9 +1,4 @@
-function useState<T>(inputValue: T): T[] {
-    function callMe(newInput: T): T {
-        return newInput;
-    }
+let val: unknown = "Hello TypeScript";
 
-    return [inputValue, callMe(inputValue)];
-}
 
-console.log(useState<string>("Yamete"));
+console.log(val);
