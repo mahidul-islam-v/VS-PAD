@@ -15,6 +15,12 @@ const p2 = {
 function printPrice(product) {
     console.log(product.price);
 }
-printPrice(p1);
-printPrice(p2);
+const o1 = {
+    id: 1,
+    pay: "card"
+};
+function getLastElement(arr) {
+    return arr.at(-1);
+}
+console.log(getLastElement(["1", "a"]));
 //# sourceMappingURL=index.js.map
