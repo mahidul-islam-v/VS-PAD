@@ -1,4 +1,4 @@
-let val: unknown = "Hello TypeScript";
+let val:unknown = "Hello TypeScript";
 
 
-console.log(val);
+console.log(<boolean>val);
