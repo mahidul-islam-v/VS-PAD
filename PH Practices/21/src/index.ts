@@ -45,11 +45,9 @@ interface Score {
 }
 function getQuizSummary(scores: number[]): Score  {
     let t: number = scores.reduce((acc: number, carry: number): number => acc + carry, 0)
-    let a: number = t/scores.length
+    let a: number = scores.length == 0 ? 0 : (t/scores.length)
     return {
         total: t,
         average: a
     };
 }
-
-console.log(getQuizSummary([]));

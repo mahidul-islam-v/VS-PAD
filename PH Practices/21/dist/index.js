@@ -32,7 +32,7 @@ function getTrafficAction(light) {
 }
 function getQuizSummary(scores) {
     let t = scores.reduce((acc, carry) => acc + carry, 0);
-    let a = t / scores.length;
+    let a = scores.length == 0 ? 0 : (t / scores.length);
     return {
         total: t,
         average: a
