@@ -30,5 +30,13 @@ function calculateWeeklyTotal(expenses) {
 function getTrafficAction(light) {
     return light == "red" ? "Stop" : light == "yellow" ? "Slow Down" : "Go";
 }
-console.log(getTrafficAction("yellow"));
+function getQuizSummary(scores) {
+    let t = scores.reduce((acc, carry) => acc + carry, 0);
+    let a = t / scores.length;
+    return {
+        total: t,
+        average: a
+    };
+}
+console.log(getQuizSummary([]));
 //# sourceMappingURL=index.js.map

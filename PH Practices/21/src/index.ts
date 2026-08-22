@@ -39,5 +39,17 @@ function getTrafficAction(light: Light): string {
 }
 
 // Problem 05
+interface Score {
+    total: number;
+    average: number;
+}
+function getQuizSummary(scores: number[]): Score  {
+    let t: number = scores.reduce((acc: number, carry: number): number => acc + carry, 0)
+    let a: number = t/scores.length
+    return {
+        total: t,
+        average: a
+    };
+}
 
-
+console.log(getQuizSummary([]));
