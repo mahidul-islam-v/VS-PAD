@@ -32,4 +32,5 @@ function calculateWeeklyTotal(expenses: number[]): number {
     return expenses.reduce((acc:number, carry:number): number => acc+carry, 0)
 }
 
-console.log(calculateWeeklyTotal([]));
+// Problem 04
+type Light = 
