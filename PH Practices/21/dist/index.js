@@ -27,5 +27,8 @@ function formatBookingConfirmation(booking) {
 function calculateWeeklyTotal(expenses) {
     return expenses.reduce((acc, carry) => acc + carry, 0);
 }
-console.log(calculateWeeklyTotal([]));
+function getTrafficAction(light) {
+    return light == "red" ? "Stop" : light == "yellow" ? "Slow Down" : "Go";
+}
+console.log(getTrafficAction("yellow"));
 //# sourceMappingURL=index.js.map

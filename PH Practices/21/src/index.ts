@@ -33,4 +33,11 @@ function calculateWeeklyTotal(expenses: number[]): number {
 }
 
 // Problem 04
-type Light = 
+type Light = "red" | "yellow" | "green"
+function getTrafficAction(light: Light): string {
+    return light=="red" ? "Stop" : light == "yellow" ? "Slow Down" : "Go"
+}
+
+// Problem 05
+
+
