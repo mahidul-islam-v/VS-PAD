@@ -3,7 +3,7 @@ from collections import Counter
 s = list(input())
 
 counts = Counter(s)
-keys = list(counts.elements())
+keys = list(counts.keys())
 values = list(counts.values())
 lent = len(keys)
 ans = ""
@@ -27,12 +27,14 @@ if not pallable:
 else :
     if (lent%2==1):
         for i in range(lent) :
-            for k in range(int(values[i]/2)+1):
+            for k in range(int(values[i]//2)):
                 ans+= keys[i]
 
         for i in range(lent) :
                     for k in range(int(values[i-i-1]/2)+1):
                         ans+= keys[lent-i-1]
+
+        print(ans)
 
 
     
