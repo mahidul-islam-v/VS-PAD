@@ -29,17 +29,22 @@ else :
         for i in range(lent-1) :
             for k in range(int(values[i]//2)):
                 ans+= keys[i]
-                print(1)
         ans+= keys[lent-1]
-        for j in range(lent-2) :
-            for k in range(int(values[-j-2]/2)+1):
+        for j in range(lent-1) :
+            for k in range(int(values[-j-2]/2)):
                 ans+= keys[-j-2]
-                print(0)
 
-        print(ans)
+    if (lent%2==0):
+            for i in range(lent) :
+                for k in range(int(values[i]//2)):
+                    ans+= keys[i]
+            for j in range(lent) :
+                for k in range(int(values[-j-1]/2)):
+                    ans+= keys[-j-1]
+
 
 
     
 
 
-print(keys, values)
+print(ans)
