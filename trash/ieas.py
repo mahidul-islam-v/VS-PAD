@@ -1,3 +1,5 @@
-grade = int(input("Enter your grade(0-100): "))
+n = int(input())
 
-print('A' if grade>=90 else 'B' if grade>=80 else 'C' if grade>=70 else 'D' if grade>=60 else 'F')
+for k in range(1, n+1):
+    i = (1/2)*(k-1)*(k+4)*(k**2-3*k+4)
+    print(int(i))
