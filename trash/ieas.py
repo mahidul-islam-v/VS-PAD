@@ -4,4 +4,4 @@ s = list(input())
 
 counts = Counter(s)
 
-print(counts)
+print(counts.values())
