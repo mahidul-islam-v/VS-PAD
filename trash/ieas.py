@@ -14,9 +14,11 @@ if (shum%2==1):
     cc = 0
     for i in values :
         if i%2!=0:
+            if cc>0:
+                pallable = False
+                break;
             cc+= 1
-            pallable = False
-            break;
+            
 else :
     for i in list(counts.values()) :
         if i%2!=0:
