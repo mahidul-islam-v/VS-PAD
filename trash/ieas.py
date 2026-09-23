@@ -12,12 +12,13 @@ ans = ""
 pallable = True
 if (shum%2==1):
     cc = 0
-    for i in values :
-        if i%2!=0:
+    for i in range(len(values)) :
+        if values[i]%2!=0:
             if cc>0:
                 pallable = False
                 break;
             cc+= 1
+            odd_id = i
             
 else :
     for i in list(counts.values()) :
@@ -32,9 +33,9 @@ else :
         for i in range(lent-1) :
             for k in range(int(values[i]//2)):
                 ans+= keys[i]
-        ans+= keys[lent-1]
+        ans+= keys[odd_id]
         for j in range(lent-1) :
-            for k in range(int(values[-j-2]/2)):
+            for k in range(int(values[-j-(2 if values[-j-1]>odd_id else 1)]/2)):
                 ans+= keys[-j-2]
 
     if (shum%2==0):
