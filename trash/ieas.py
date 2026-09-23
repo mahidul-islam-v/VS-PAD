@@ -38,6 +38,7 @@ else :
             for i in range(lent) :
                 for k in range(int(values[i]//2)):
                     ans+= keys[i]
+                    print(0)
             for j in range(lent) :
                 for k in range(int(values[-j-1]/2)):
                     ans+= keys[-j-1]
