@@ -13,7 +13,7 @@ pallable = True
 if (shum%2==1):
     cc = 0
     for i in values :
-        if i%2!=0 and cc>=0:
+        if i%2!=0 and cc>0:
             cc+= 1
             pallable = False
             break;
