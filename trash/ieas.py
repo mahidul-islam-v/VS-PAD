@@ -26,13 +26,15 @@ if not pallable:
     print("NO SOLUTION")
 else :
     if (lent%2==1):
-        for i in range(lent) :
+        for i in range(lent-2) :
             for k in range(int(values[i]//2)):
                 ans+= keys[i]
-
-        for i in range(lent) :
-                    for k in range(int(values[i-i-1]/2)+1):
-                        ans+= keys[lent-i-1]
+                print(1)
+        ans+= keys[lent-2]
+        for j in range(lent-2) :
+                for k in range(int(values[lent-i-1]/2)+1):
+                    ans+= keys[lent-i-1]
+                    print(0)
 
         print(ans)
 
