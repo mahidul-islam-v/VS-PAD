@@ -1,4 +1,4 @@
-    import { use } from "react";
+import { use } from "react";
 import type { CountryType } from "../type"
 
 export interface CountriesProps {
