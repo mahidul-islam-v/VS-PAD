@@ -18,7 +18,6 @@ function App() {
       <h1>Hello Nadir World...</h1>
       <Suspense fallback={<div>Nadir Loading...</div>}>
         <Countries countriesPromise={countrisPromise()}>
-
         </Countries>
       </Suspense>
     </>

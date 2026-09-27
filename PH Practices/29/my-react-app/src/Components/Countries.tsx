@@ -10,7 +10,12 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     console.log(countries)
     return (
         <div>
-            <h2>Countries:</h2>
+            <h2>
+                Countries:{" "}
+                {countries.map((country) => (
+                    <li>{country.name.official}</li>
+                ))}
+            </h2>
         </div>
-    )
+    );
 }
