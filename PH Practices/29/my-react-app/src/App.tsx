@@ -1,7 +1,12 @@
 
 import './App.css'
 
-let linkA = 'openapi.programming-hero.com/api/all'
+let countrisPromise = async () => {
+  let res = await fetch("openapi.programming-hero.com/api/all");
+  let data = await res.json();
+
+  return data.countries;
+}
 
 function App() {
 
