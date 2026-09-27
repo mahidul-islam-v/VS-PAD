@@ -1,8 +1,10 @@
+import type { CountryType } from "../type"
+
 export interface CountriesProps {
-    prop: string
+    CountriesPromise: Promise<CountryType>
 }
 
-export default function Countries({ prop }: CountriesProps) {
+export default function Countries({ CountriesPromise }: CountriesProps) {
     
     return 
 }
